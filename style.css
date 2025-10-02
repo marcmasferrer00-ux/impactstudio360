@@ -38,8 +38,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;           /* sense padding vertical, només horitzontal */
-  height: 100px;              /* alçada fixa que controlis */
+  padding: 0 20px;           
+  height: 10px;             
   background: #ffffff;
   position: sticky;
   top: 0;
