@@ -157,17 +157,45 @@ nav ul {
 }
 
 .about .grid {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 30px;
-  font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.about .card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px 22px;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.about .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
 }
 
 .about .icon {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 10px;
+  width: 56px;     /* mida icona */
+  height: auto;
+  margin-bottom: 14px;
+  filter: brightness(0);     /* negre */
+  transition: filter 0.3s ease;
+}
+
+.about .card:hover .icon {
+  filter: invert(23%) sepia(98%) saturate(7499%) hue-rotate(353deg) brightness(90%) contrast(110%);
+  /* es torna vermella (#E30613) */
+}
+
+.about h3 {
+  margin: 10px 0 8px;
+  font-weight: 600;
+}
+
+.about p {
+  color: #555;
 }
 
 /* --- Serveis --- */
