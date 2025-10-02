@@ -47,7 +47,7 @@ header {
 }
 
 .logo img {
-  height: 60px; /* prova 50px, 60px o 80px segons quedi millor */
+  height: 120px; /* prova 50px, 60px o 80px segons quedi millor */
   display: block;
 }
 
