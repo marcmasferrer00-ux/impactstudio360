@@ -29,9 +29,9 @@ header {
   border-bottom: 1px solid #f2f2f2;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 20px;
+.logo img {
+  height: 50px;   /* prova 40–60px fins que t’agradi */
+  display: block;
 }
 
 .logo span.red {
