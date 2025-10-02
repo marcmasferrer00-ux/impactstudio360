@@ -1,0 +1,194 @@
+/* --- Estils generals --- */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  color: #333333;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-weight: 700;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Header --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.logo span.red {
+  color: #E30613;
+  text-decoration: underline;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.cta {
+  background: #E30613;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* --- Hero --- */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: #f2f2f2;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+/* --- Stats --- */
+.stats {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.stats .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.stats strong {
+  font-size: 2rem;
+  color: #E30613;
+}
+
+/* --- About --- */
+.about {
+  padding: 60px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.about .grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  font-size: 1.2rem;
+}
+
+/* --- Serveis --- */
+.services {
+  padding: 60px 20px;
+  background: #f2f2f2;
+}
+
+.services ul {
+  max-width: 800px;
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+
+.services li {
+  margin: 15px 0;
+}
+
+/* --- Projectes --- */
+.projects {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.projects .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.projects .card {
+  background: #f2f2f2;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+/* --- Testimonis --- */
+.testimonials {
+  padding: 60px 20px;
+  background: #333333;
+  color: #ffffff;
+  text-align: center;
+}
+
+blockquote {
+  font-style: italic;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* --- Contacte --- */
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact input, .contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact button {
+  border: none;
+  cursor: pointer;
+}
+
+/* --- Footer --- */
+footer {
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+footer a {
+  color: #E30613;
+}
