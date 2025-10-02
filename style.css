@@ -196,6 +196,20 @@ nav ul {
 
 .about p {
   color: #555;
+  .about .icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.2s ease;
+}
+
+.about .icon:hover {
+  transform: scale(1.1);
+}
+
 }
 
 /* --- Serveis --- */
