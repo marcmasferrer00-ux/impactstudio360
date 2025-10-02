@@ -10,8 +10,9 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">IMPACT <span>studio</span> <span class="red">360</span></div>
-    <nav>
+   <div class="logo">
+  <img src="assets/img/logo.png" alt="Impact Studio 360" />
+</div>
       <ul>
         <li><a href="#home">Inici</a></li>
         <li><a href="#about">Agència</a></li>
