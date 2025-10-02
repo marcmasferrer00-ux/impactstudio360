@@ -100,22 +100,34 @@ nav ul {
 
 /* --- Hero --- */
 .hero {
-  text-align: center;
-  padding: 120px 20px;
-  background: #f9f9f9;
+  padding: 80px 40px;
+  background: #f2f2f2;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  line-height: 1.2;
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;              /* espai entre logo i text */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.hero p {
+.hero-logo img {
+  height: 200px;          /* ajusta la mida del logo */
+}
+
+.hero-text {
   max-width: 600px;
-  margin: auto;
-  margin-bottom: 30px;
-  font-size: 1.1rem;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
 }
 
 /* --- Stats --- */
