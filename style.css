@@ -108,7 +108,7 @@ nav ul {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 80px;              /* espai entre logo i text */
+  gap: 100px;              /* espai entre logo i text */
   max-width: 1200px;
   margin: 0 auto;
 }
