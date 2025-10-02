@@ -38,19 +38,19 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 20px;
+  padding: 0 20px;           /* sense padding vertical, només horitzontal */
+  height: 100px;              /* alçada fixa que controlis */
   background: #ffffff;
   position: sticky;
   top: 0;
-  z-index: 100;
   border-bottom: 1px solid #f2f2f2;
+  z-index: 1000;
 }
 
 .logo img {
-  height: 400px; 
+  height: 400px;              /* mida del logo com la vols */
   display: block;
 }
-
 .logo .impact {
   font-weight: 700;
 }
