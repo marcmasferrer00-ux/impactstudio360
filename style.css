@@ -427,16 +427,17 @@ footer .social a:hover {
   }
 
   nav {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    flex-direction: column;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  flex-direction: column;
+  padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 9999; /* 🔑 així el menú sempre surt a sobre */
+}
 
   nav.active {
     display: flex;
