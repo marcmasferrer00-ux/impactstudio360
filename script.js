@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
-  // Tanca el menú quan fem clic a un enllaç
+  // Tanca el menú en clicar un enllaç
   nav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       nav.classList.remove('active');
