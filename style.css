@@ -291,10 +291,10 @@ nav ul {
 
 .projects .card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  height: 400px;      /* pots ajustar entre 350px - 450px segons et convingui */
+  object-fit: cover;  /* omple l'espai retallant sense deformar */
+  border-radius: 8px 8px 0 0;
+  display: block;
 }
 
 .projects h3 {
