@@ -17,4 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.remove("active");
     });
   });
+
+  // Opcional: tanquem el menú si es fa "resize" a desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      nav.classList.remove("active");
+    }
+  });
 });
