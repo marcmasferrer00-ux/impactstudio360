@@ -12,44 +12,47 @@
 </head>
 <body>
   <!-- Header -->
-<header>
-  <!-- Logo -->
-  <div class="logo">
-    <img src="assets/img/logo.png" alt="Impact Studio 360">
-  </div>
-
-  <!-- Botó menú mòbil -->
-  <button id="menuToggle" class="hamburger" aria-label="Menú"
-          aria-controls="mainNav" aria-expanded="false">☰</button>
-
-  <!-- Navegació del header -->
-  <nav id="mainNav">
-    <ul>
-      <li><a href="#home">Inici</a></li>
-      <li><a href="#about">Agència</a></li>
-      <li><a href="#services">Serveis</a></li>
-      <li><a href="#projects">Projectes</a></li>
-      <li><a href="#contact">Contacte</a></li>
-    </ul>
-  </nav>
-  
-  <!-- Hero -->
-<section id="home" class="hero">
-  <div class="hero-container">
-    <div class="hero-logo">
+  <header>
+    <!-- Logo -->
+    <div class="logo">
       <img src="assets/img/logo.png" alt="Impact Studio 360">
     </div>
-    <div class="hero-text">
-      <h1>Si ningú et coneix, ningú et compra.</h1>
-      <p>A Impact Studio 360 transformem la presència digital de la teva marca perquè deixi de ser invisible. Creem estratègies que connecten, continguts que atrauen i experiències digitals que converteixen.</p>
-      <!-- Desktop CTA -->
-      <a href="#contact" class="cta desktop-only">Vull que em coneguin</a>
-      <!-- Mobile CTA -->
-      <a href="#contact" class="cta mobile-only">Comencem</a>
-    </div>
-  </div>
-</section>
 
+    <!-- Botó menú mòbil -->
+    <button id="menuToggle" class="hamburger" aria-label="Menú"
+            aria-controls="mainNav" aria-expanded="false">☰</button>
+
+    <!-- Navegació -->
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#home">Inici</a></li>
+        <li><a href="#about">Agència</a></li>
+        <li><a href="#services">Serveis</a></li>
+        <li><a href="#projects">Projectes</a></li>
+        <li><a href="#contact">Contacte</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA només en desktop -->
+    <a href="#contact" class="cta desktop-only">Comencem</a>
+  </header> <!-- 🔑 tanquem header correctament -->
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-logo">
+        <img src="assets/img/logo.png" alt="Impact Studio 360">
+      </div>
+      <div class="hero-text">
+        <h1>Si ningú et coneix, ningú et compra.</h1>
+        <p>A Impact Studio 360 transformem la presència digital de la teva marca perquè deixi de ser invisible. Creem estratègies que connecten, continguts que atrauen i experiències digitals que converteixen.</p>
+        <!-- Desktop CTA -->
+        <a href="#contact" class="cta desktop-only">Vull que em coneguin</a>
+        <!-- Mobile CTA -->
+        <a href="#contact" class="cta mobile-only">Comencem</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Per què ser digital importa -->
   <section class="stats">
@@ -74,19 +77,16 @@
         <h3>Estratègia</h3>
         <p>Traçem el full de ruta perquè la teva marca creixi amb una direcció clara.</p>
       </div>
-
       <div class="card">
         <i class="fas fa-bullhorn icon"></i>
         <h3>Màrqueting</h3>
         <p>Connectem la teva marca amb el teu públic a través de campanyes efectives.</p>
       </div>
-
       <div class="card">
         <i class="fas fa-code icon"></i>
         <h3>Desenvolupament</h3>
         <p>Creem webs modernes i e-commerce optimitzats perquè venguis més i millor.</p>
       </div>
-
       <div class="card">
         <i class="fas fa-share-alt icon"></i>
         <h3>Xarxes socials</h3>
@@ -106,25 +106,21 @@
         <h3>Branding &amp; Disseny gràfic</h3>
         <p>Creem identitats visuals memorables i coherents que transmetin l’essència de la teva marca.</p>
       </div>
-      
       <div class="card">
         <i class="fas fa-route icon"></i>
         <h3>Estratègia digital</h3>
         <p>Definim el full de ruta perquè el teu negoci tingui creixement i resultats clars.</p>
       </div>
-      
       <div class="card">
         <i class="fas fa-hashtag icon"></i>
         <h3>Gestió de xarxes socials</h3>
         <p>Creem contingut atractiu i connectem amb la teva comunitat de seguidors.</p>
       </div>
-      
       <div class="card">
         <i class="fas fa-laptop-code icon"></i>
         <h3>Web &amp; e-commerce</h3>
         <p>Desenvolupem webs modernes, ràpides i pensades per convertir visites en clients.</p>
       </div>
-      
       <div class="card">
         <i class="fas fa-video icon"></i>
         <h3>Producció audiovisual</h3>
@@ -143,13 +139,11 @@
         <h3>Projecte A</h3>
         <p>Creació d'una web corporativa per a una marca local amb resultats espectaculars.</p>
       </div>
-
       <div class="card">
         <img src="assets/img/project2.jpeg" alt="Projecte B">
         <h3>Projecte B</h3>
         <p>Estratègia de xarxes socials que va triplicar la comunitat online.</p>
       </div>
-
       <div class="card">
         <img src="assets/img/project3.jpeg" alt="Projecte C">
         <h3>Projecte C</h3>
@@ -187,7 +181,6 @@
   </section>
 
   <!-- Footer -->
-   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Impact Studio 360. Tots els drets reservats.</p>
     <nav>
@@ -202,6 +195,7 @@
       </a>
     </div>
   </footer>
+
   <!-- Script -->
   <script src="script.js?v=2"></script>
 </body>
