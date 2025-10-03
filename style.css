@@ -291,8 +291,9 @@ nav ul {
 
 .projects .card img {
   width: 100%;
-  height: 400px;      /* pots ajustar entre 350px - 450px segons et convingui */
-  object-fit: cover;  /* omple l'espai retallant sense deformar */
+  height: 400px;       /* alçada fixa */
+  object-fit: contain; /* mostra tota la imatge sense retallar */
+  background: #f2f2f2; /* fons gris suau per omplir buits */
   border-radius: 8px 8px 0 0;
   display: block;
 }
