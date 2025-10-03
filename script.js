@@ -1,19 +1,22 @@
 // script.js
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger");
-  const nav = document.querySelector("nav");
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
 
-  if (hamburger && nav) {
-    hamburger.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
+  if (!hamburger || !nav) return;
 
-    // Tanquem menú quan fem clic a un enllaç
-    const links = document.querySelectorAll("nav ul li a");
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("active");
-      });
+  // Toggle del menú
+  hamburger.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isOpen = nav.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  // Tanca el menú quan fem clic a un enllaç
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
     });
-  }
+  });
 });
