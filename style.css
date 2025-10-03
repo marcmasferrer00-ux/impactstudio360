@@ -386,19 +386,32 @@ footer a {
 }
 
 /* --- Responsive adjustments --- */
+/* --- Ajustos menú mòbil --- */
 @media (max-width: 768px) {
-  .about .grid {
-    flex-direction: column;
-    gap: 20px;
-  }
   header {
-    flex-direction: column;
-    align-items: flex-start;
+    position: relative; /* que no sigui sticky mentre estigui desplegat */
   }
+
   nav ul {
+    position: absolute;
+    top: 50px;       /* baixa una mica perquè no tapi el header */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 20px 0;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+    z-index: 999;
+  }
+
+  nav ul li {
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px 0;
   }
   .cta {
     margin-top: 10px;
