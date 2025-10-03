@@ -263,10 +263,26 @@ nav ul {
 
 
 /* --- Projectes --- */
+.projects {
+  padding: 40px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.projects h2 {
+  margin-bottom: 10px;
+}
+
+.projects p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
 .projects .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-items: center; /* centra els recuadres */
 }
 
 .projects .card {
@@ -276,7 +292,7 @@ nav ul {
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease;
-  padding: 0; /* sense espais innecessaris */
+  width: 250px;   /* recuadre més petit */
 }
 
 .projects .card:hover {
@@ -286,22 +302,23 @@ nav ul {
 .projects .card img {
   width: 100%;
   height: auto;
-  max-height: 450px;   /* controla que no siguin massa llargues */
-  object-fit: contain; /* ajusta la imatge sencera sense deformar */
+  max-height: 350px;   /* imatges més petites */
+  object-fit: contain; /* manté proporcions */
   display: block;
   margin: 0 auto;
 }
 
 .projects .card h3 {
-  font-size: 1.2rem;
-  margin: 0.8rem 0 0.3rem;
+  font-size: 1.1rem;
+  margin: 0.6rem 0 0.3rem;
 }
 
 .projects .card p {
-  font-size: 0.95rem;
-  padding: 0 1rem 1rem;
+  font-size: 0.9rem;
+  padding: 0 0.8rem 1rem;
   color: #444;
 }
+
 
 /* --- Testimonis --- */
 .testimonials {
