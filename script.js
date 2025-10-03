@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!hamburger || !nav) return;
 
-  // Obrir/tancar menú
+  // Toggle menú mòbil
   hamburger.addEventListener('click', (e) => {
     e.preventDefault();
     const isOpen = nav.classList.toggle('active');
     hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
-  // Tancar menú al clicar un enllaç
+  // Tancar menú quan cliquem un enllaç
   nav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       nav.classList.remove('active');
