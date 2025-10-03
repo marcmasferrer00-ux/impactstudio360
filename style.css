@@ -34,26 +34,34 @@ a:hover {
 }
 
 /* --- Header --- */
-/* Assegurem header per sobre de tot */
+/* Header per sobre de tot */
 header {
   position: sticky;
   top: 0;
-  z-index: 2000; /* per sobre del nav mòbil */
+  z-index: 2000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #f2f2f2;
 }
+
+.logo img { height: 40px; }
 
 /* Botó hamburguesa */
 .hamburger {
-  display: none;           /* es mostra a mòbil */
+  display: none;     /* es mostra a mòbil */
   font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
   line-height: 1;
   position: relative;
-  z-index: 2100;           /* per estar per sobre del nav */
+  z-index: 2100;     /* per sobre del nav */
 }
 
-/* Navegació de capçalera (desktop per defecte) */
+/* Navegació header (desktop) */
 header nav {
   display: flex;
   align-items: center;
@@ -62,32 +70,25 @@ header nav {
 
 /* ——— MÒBIL ——— */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+  .desktop-only { display: none; }
+  .hamburger { display: block; }
 
-  /* Amaguem el nav del header per defecte en mòbil */
-  header nav {
-    display: none;
-  }
+  /* Ocult per defecte en mòbil */
+  header nav { display: none; }
 
-  /* Menú mòbil desplegable */
+  /* Menú desplegable */
   #mainNav {
-    position: fixed;       /* perquè no el “xafi” el flux del header */
-    top: 60px;             /* just sota el header */
-    left: 0;
-    right: 0;
-    display: none;         /* ocult per defecte */
+    position: fixed;
+    top: 60px;
+    left: 0; right: 0;
+    display: none;
     flex-direction: column;
     background: #fff;
     padding: 16px 0;
     box-shadow: 0 4px 12px rgba(0,0,0,.12);
-    z-index: 2050;         /* per sobre del contingut, sota el botó */
+    z-index: 2050;
   }
-
-  #mainNav.active {
-    display: flex;         /* mostrem menú quan té la classe */
-  }
+  #mainNav.active { display: flex; }
 
   #mainNav ul {
     display: flex;
@@ -98,13 +99,12 @@ header nav {
     list-style: none;
     text-align: center;
   }
-
   #mainNav ul li a {
     font-size: 1.2rem;
     padding: 10px 0;
   }
 
-  /* Hero mòbil compacte (el teu estil) */
+  /* Hero mòbil compacte (perquè es vegi el botó) */
   .hero-container {
     flex-direction: column;
     align-items: center;
@@ -112,14 +112,11 @@ header nav {
     text-align: center;
     gap: 15px;
   }
-  .hero-logo img { height: 140px; }
+  .hero-logo img { height: 140px; }  /* abans 500px: el causant del “logo gegant” */
   .hero-text { max-width: 90%; }
   .hero-text h1 { font-size: 1.6rem; line-height: 1.3; }
   .hero-text p { font-size: 1rem; margin-bottom: 15px; }
   .hero-text .mobile-only { display: inline-block; margin: 0 auto; }
-
-  /* Assegurem que el CTA de desktop no molesti en mòbil */
-  .desktop-only { display: none; }
 }
 
 /* --- Hero --- */
