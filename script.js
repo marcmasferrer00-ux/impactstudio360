@@ -1,4 +1,5 @@
 // script.js
+console.log("script carregat correctament");
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector("nav");
