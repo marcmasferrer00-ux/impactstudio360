@@ -424,9 +424,13 @@ footer .social a:hover {
 
   .hamburger {
     display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
-  nav {
+  header nav {
     display: none;
     position: absolute;
     top: 60px;
@@ -436,19 +440,20 @@ footer .social a:hover {
     flex-direction: column;
     padding: 20px 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 999;
   }
 
-  nav.active {
+  header nav.active {
     display: flex;
   }
 
-  nav ul {
+  header nav ul {
     flex-direction: column;
     gap: 15px;
     text-align: center;
   }
 
-  nav ul li a {
+  header nav ul li a {
     font-size: 1.2rem;
   }
 
