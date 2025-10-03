@@ -1,22 +1,24 @@
 // script.js
-document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.getElementById('menuToggle');
-  const nav = document.getElementById('mainNav');
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
 
-  if (!hamburger || !nav) return;
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+      mainNav.classList.toggle("active");
 
-  // Toggle del menú
-  hamburger.addEventListener('click', (e) => {
-    e.preventDefault();
-    const isOpen = nav.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-
-  // Tanca el menú en clicar un enllaç
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
+      // Actualitza aria-expanded per accessibilitat
+      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", !expanded);
     });
-  });
+
+    // Tanquem el menú en clicar un enllaç
+    const links = mainNav.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 });
