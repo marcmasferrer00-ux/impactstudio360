@@ -13,13 +13,17 @@
 <body>
   <!-- Header -->
 <header>
+  <!-- Logo -->
   <div class="logo">
     <img src="assets/img/logo.png" alt="Impact Studio 360">
   </div>
 
-  <button class="hamburger" aria-label="Menú">☰</button>
+  <!-- Botó menú mòbil -->
+  <button id="menuToggle" class="hamburger" aria-label="Menú"
+          aria-controls="mainNav" aria-expanded="false">☰</button>
 
-  <nav>
+  <!-- Navegació del header -->
+  <nav id="mainNav">
     <ul>
       <li><a href="#home">Inici</a></li>
       <li><a href="#about">Agència</a></li>
@@ -29,9 +33,9 @@
     </ul>
   </nav>
 
+  <!-- Botó només en desktop -->
   <a href="#contact" class="cta desktop-only">Comencem</a>
 </header>
-
 
   <!-- Hero -->
 <section id="home" class="hero">
