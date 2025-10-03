@@ -1,9 +1,20 @@
-// Quan es fa clic al botó, afegim o traiem la classe "active" al <nav>
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector("nav");
+// script.js
 
-  menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
+// Esperem que el DOM estigui carregat
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger"); // botó ☰
+  const nav = document.querySelector("nav"); // menú de navegació
+
+  // Quan cliquem el botó hamburguesa
+  hamburger.addEventListener("click", () => {
+    nav.classList.toggle("active"); // afegim/treiem classe "active"
+  });
+
+  // Quan fem clic a un enllaç del menú (en mòbil), tanquem el menú
+  const links = document.querySelectorAll("nav ul li a");
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
   });
 });
