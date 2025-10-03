@@ -13,7 +13,7 @@
 <body>
   <!-- Header -->
   <header>
-    <!-- Logo -->
+    <!-- Logo petit (fixe a la capçalera) -->
     <div class="logo">
       <img src="assets/img/logo.png" alt="Impact Studio 360">
     </div>
@@ -37,17 +37,23 @@
   </header>
 
   <!-- Hero -->
- <div class="hero-text">
-  <h1>Si ningú et coneix, ningú et compra.</h1>
-  <p>A Impact Studio 360 transformem la presència digital de la teva marca perquè deixi de ser invisible. Creem estratègies que connecten, continguts que atrauen i experiències digitals que converteixen.</p>
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-logo">
+        <img src="assets/img/logo.png" alt="Impact Studio 360">
+      </div>
+      <div class="hero-text">
+        <h1>Si ningú et coneix, ningú et compra.</h1>
+        <p>A Impact Studio 360 transformem la presència digital de la teva marca perquè deixi de ser invisible. Creem estratègies que connecten, continguts que atrauen i experiències digitals que converteixen.</p>
+        
+        <!-- Botó només per desktop -->
+        <a href="#contact" class="cta desktop-only">Vull que em coneguin</a>
 
-  <!-- Desktop CTA -->
-  <a href="#contact" class="cta desktop-only">Vull que em coneguin</a>
-  
-  <!-- Mobile CTA -->
-  <a href="#contact" class="cta mobile-only">Comencem</a>
-</div>
-
+        <!-- Botó només per mòbil -->
+        <a href="#contact" class="cta mobile-only">Comencem</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Per què ser digital importa -->
   <section class="stats">
@@ -177,21 +183,20 @@
     <div class="info">
       <p>📧 hola@impactstudio360.com</p>
       <p>☎️ +34 600 000 000</p>
-      <p>Segueix-nos: Instagram | LinkedIn</p>
+      <p>Segueix-nos: 
+        <a href="https://instagram.com/impactstudio360" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/impactstudio360" target="_blank"><i class="fab fa-facebook"></i></a>
+      </p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-  <p>&copy; 2025 Impact Studio 360. Tots els drets reservats.</p>
-  <nav>
-    <a href="#">Privacitat</a> | <a href="#">Termes</a>
-  </nav>
-  <div class="social">
-    <a href="https://instagram.com/impactstudio360" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://facebook.com/impactstudio360" target="_blank"><i class="fab fa-facebook"></i></a>
-  </div>
-</footer>
+    <p>&copy; 2025 Impact Studio 360. Tots els drets reservats.</p>
+    <nav>
+      <a href="#">Privacitat</a> | <a href="#">Termes</a>
+    </nav>
+  </footer>
 
   <!-- Script -->
   <script src="script.js"></script>
