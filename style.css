@@ -373,6 +373,21 @@ footer a {
   color: #E30613;
   margin: 0 5px;
 }
+/* Xarxes socials al footer */
+footer .social {
+  margin-top: 15px;
+}
+
+footer .social a {
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+footer .social a:hover {
+  color: #E30613; /* Vermell corporatiu al hover */
+}
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
