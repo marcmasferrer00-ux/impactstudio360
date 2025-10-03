@@ -20,6 +20,7 @@ p {
 
 ul {
   padding: 0;
+  margin: 0;
 }
 
 /* Links */
@@ -34,7 +35,6 @@ a:hover {
 }
 
 /* --- Header --- */
-/* Header per sobre de tot */
 header {
   position: sticky;
   top: 0;
@@ -51,14 +51,14 @@ header {
 
 /* Botó hamburguesa */
 .hamburger {
-  display: none;     /* es mostra a mòbil */
+  display: none;
   font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
   line-height: 1;
   position: relative;
-  z-index: 2100;     /* per sobre del nav */
+  z-index: 2100;
 }
 
 /* Navegació header (desktop) */
@@ -68,56 +68,16 @@ header nav {
   gap: 20px;
 }
 
-/* ——— MÒBIL ——— */
-@media (max-width: 768px) {
-  .desktop-only { display: none; }
-  .hamburger { display: block; }
-
-  /* Ocult per defecte en mòbil */
-  header nav { display: none; }
-
-  /* Menú desplegable */
-  #mainNav {
-    position: fixed;
-    top: 60px;
-    left: 0; right: 0;
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    padding: 16px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,.12);
-    z-index: 2050;
-  }
-  #mainNav.active { display: flex; }
-
-  #mainNav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-  }
-  #mainNav ul li a {
-    font-size: 1.2rem;
-    padding: 10px 0;
-  }
-
-  /* Hero mòbil compacte (perquè es vegi el botó) */
-  .hero-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 15px;
-  }
-  .hero-logo img { height: 140px; }  /* abans 500px: el causant del “logo gegant” */
-  .hero-text { max-width: 90%; }
-  .hero-text h1 { font-size: 1.6rem; line-height: 1.3; }
-  .hero-text p { font-size: 1rem; margin-bottom: 15px; }
-  .hero-text .mobile-only { display: inline-block; margin: 0 auto; }
+/* CTA */
+.cta {
+  background: #E30613;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
+.cta:hover { background: #b0040f; }
 
 /* --- Hero --- */
 .hero {
@@ -267,7 +227,6 @@ header nav {
   color: #555;
 }
 
-
 /* --- Projectes --- */
 .projects {
   padding: 40px 20px;
@@ -389,6 +348,7 @@ footer a {
   color: #E30613;
   margin: 0 5px;
 }
+
 /* Xarxes socials al footer */
 footer .social {
   margin-top: 15px;
@@ -402,7 +362,7 @@ footer .social a {
 }
 
 footer .social a:hover {
-  color: #E30613; /* Vermell corporatiu al hover */
+  color: #E30613;
 }
 
 /* --- Responsive --- */
@@ -413,60 +373,43 @@ footer .social a:hover {
     text-align: center;
   }
 
-  .hero-logo img {
-    height: 250px;
-  }
+  .hero-logo img { height: 250px; }
+  .hero-text { max-width: 100%; }
 
-  .hero-text {
-    max-width: 100%;
-  }
-
-  .stats .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .projects .grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .stats .grid { grid-template-columns: 1fr 1fr; }
+  .projects .grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
-  .desktop-only {
+  .desktop-only { display: none; }
+  .mobile-only { display: inline-block; }
+
+  .hamburger { display: block; }
+
+  /* Menú desplegable mòbil */
+  #mainNav {
     display: none;
+    position: absolute;
+    top: 60px;
+    left: 0; right: 0;
+    flex-direction: column;
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 2050;
   }
-  .mobile-only {
-    display: inline-block;
-  }
+  #mainNav.active { display: flex; }
 
-  .hamburger {
-    display: block;
-  }
-
-  nav {
-  display: none;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  background: #fff;
-  flex-direction: column;
-  padding: 20px 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  z-index: 1000; /* 🔑 així el menú sempre surt a sobre */
-}
-
-  nav.active {
+  #mainNav ul {
     display: flex;
-  }
-
-  nav ul {
     flex-direction: column;
     gap: 15px;
     text-align: center;
+    list-style: none;
   }
-
-  nav ul li a {
+  #mainNav ul li a {
     font-size: 1.2rem;
+    padding: 10px 0;
   }
 
   /* Hero mòbil */
@@ -477,46 +420,14 @@ footer .social a:hover {
     text-align: center;
     gap: 15px;
   }
+  .hero-logo img { height: 140px; }
+  .hero-text { max-width: 90%; }
+  .hero-text h1 { font-size: 1.6rem; line-height: 1.3; }
+  .hero-text p { font-size: 1rem; margin-bottom: 15px; }
+  .hero-text .mobile-only { display: inline-block; margin: 0 auto; }
 
-  .hero-logo img {
-    height: 140px;
-  }
-
-  .hero-text {
-    max-width: 90%;
-  }
-
-  .hero-text h1 {
-    font-size: 1.6rem;
-    line-height: 1.3;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-
-  .hero-text .mobile-only {
-    display: inline-block;
-    margin: 0 auto;
-  }
-
-  .stats .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .projects .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .projects .card {
-    width: 90%;
-  }
-
-  .contact form {
-    width: 100%;
-    padding: 0 10px;
-  }
+  .stats .grid { grid-template-columns: 1fr; }
+  .projects .grid { grid-template-columns: 1fr; }
+  .projects .card { width: 90%; }
+  .contact form { width: 100%; padding: 0 10px; }
 }
-
-
