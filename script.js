@@ -1,35 +1,40 @@
 // Menú mòbil
-document.addEventListener('DOMContentLoaded', () => {
-  const burger = document.getElementById('menuToggle');
-  const nav = document.getElementById('mainNav');
+const hamburger = document.querySelector('.hamburger');
+const nav = document.getElementById('mainNav');
 
-  if (burger && nav) {
-    burger.addEventListener('click', (e) => {
-      e.preventDefault();
-      nav.classList.toggle('active');
-      burger.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', nav.classList.contains('active') ? 'true' : 'false');
-    });
-
-    // Tancar en clicar un enllaç
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        nav.classList.remove('active');
-        burger.classList.remove('is-open');
-        burger.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-
-  // Scroll suau
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const id = a.getAttribute('href');
-      const el = document.querySelector(id);
-      if (el) {
-        e.preventDefault();
-        window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
-      }
-    });
+if (hamburger && nav) {
+  hamburger.addEventListener('click', () => {
+    const open = nav.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-});
+
+  // Tanca el menú en clicar un enllaç
+  nav.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => nav.classList.remove('active'))
+  );
+}
+
+// Enviament formulari (Web3Forms) — missatge d’èxit/error sense redirecció
+const form = document.getElementById('contactForm');
+if (form) {
+  const ok = document.getElementById('formSuccess');
+  const ko = document.getElementById('formError');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    ok.hidden = true; ko.hidden = true;
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: data });
+      if (res.ok) {
+        ok.hidden = false;
+        form.reset();
+      } else {
+        ko.hidden = false;
+      }
+    } catch {
+      ko.hidden = false;
+    }
+  });
+}
