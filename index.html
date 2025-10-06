@@ -3,20 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impact Studio 360</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Impact Studio 360 | Estratègia, Disseny i Màrqueting Digital</title>
+  
+  <!-- SEO & Meta -->
+  <meta name="description" content="Impact Studio 360 és la teva agència digital 360º. Estratègia, branding, webs, social media i contingut que genera impacte real." />
+  <meta name="theme-color" content="#e63946" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Impact Studio 360" />
+  <meta property="og:description" content="Transformem la presència digital de la teva marca." />
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta property="og:url" content="https://impactstudio360.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon & Manifest -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="manifest" href="manifest.json" />
 
   <!-- Tipografia -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- Icones Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <!-- Icones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="assets/img/logo.png" alt="Impact Studio 360" />
+      <img src="assets/img/logo.png" alt="Impact Studio 360" loading="lazy" />
     </div>
     <button id="menuToggle" class="hamburger" aria-label="Menú" aria-controls="mainNav" aria-expanded="false">☰</button>
     <nav id="mainNav">
@@ -33,14 +49,17 @@
 
   <!-- HERO -->
   <section id="home" class="hero">
-    <div class="hero-logo">
-      <img src="assets/img/logo.png" alt="Impact Studio 360" />
-    </div>
-    <div class="hero-text">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-logo">
+        <img src="assets/img/logo.png" alt="Impact Studio 360" />
+      </div>
       <h1>Si ningú et coneix, ningú et compra.</h1>
-      <p>A Impact Studio 360 transformem la presència digital de la teva marca perquè deixi de ser invisible. Creem estratègies que connecten, continguts que atrauen i experiències digitals que converteixen.</p>
-      <a href="#contact" class="cta">Vull que em coneguin</a>
+      <h2 class="hero-subtitle">Fem que la teva marca deixi de ser invisible.</h2>
+      <p>A Impact Studio 360 transformem la presència digital de la teva marca amb estratègies, dissenys i continguts que connecten.</p>
+      <a href="#contact" class="cta pulse">Vull que em coneguin</a>
     </div>
+    <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
   </section>
 
   <!-- STATS -->
@@ -48,38 +67,37 @@
     <h2>Ser invisible és perdre clients.</h2>
     <p>El món és digital. Si no hi ets, perds oportunitats cada dia. Les dades parlen per si soles:</p>
     <div class="grid">
-      <div><strong>41</strong>Empreses locals depenen de les xarxes socials</div>
-      <div><strong>64</strong>De la població mundial utilitza xarxes socials</div>
-      <div><strong>2</strong>h 21m<br>Temps mitjà al dia per persona</div>
-      <div><strong>40</strong>Negocis sense estratègia digital</div>
+      <div><strong>41</strong><span>Empreses locals depenen de les xarxes socials</span></div>
+      <div><strong>64</strong><span>De la població mundial utilitza xarxes socials</span></div>
+      <div><strong>2</strong><span>h 21m de mitjana al dia per persona</span></div>
+      <div><strong>40</strong><span>Negocis sense estratègia digital</span></div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="about fade-section">
     <h2>El teu partner digital 360º</h2>
-    <p>Impact Studio 360 és una agència creativa i estratègica que acompanya marques i negocis en tot el seu viatge digital. Des de la idea fins al resultat, unim estratègia, disseny i tecnologia per generar impacte real.</p>
-
+    <p>Impact Studio 360 és una agència creativa que acompanya marques i negocis en tot el seu viatge digital. Unim estratègia, disseny i tecnologia per generar impacte real.</p>
     <div class="grid">
       <div class="card fade-item">
         <i class="fas fa-chess-board icon"></i>
         <h3>Estratègia</h3>
-        <p>Traçem el full de ruta perquè la teva marca creixi amb una direcció clara.</p>
+        <p>Definim el full de ruta perquè la teva marca creixi amb una direcció clara.</p>
       </div>
       <div class="card fade-item">
         <i class="fas fa-bullhorn icon"></i>
         <h3>Màrqueting</h3>
-        <p>Connectem la teva marca amb el teu públic a través de campanyes efectives.</p>
+        <p>Connectem la teva marca amb el teu públic amb campanyes que generen resultats.</p>
       </div>
       <div class="card fade-item">
         <i class="fas fa-code icon"></i>
         <h3>Desenvolupament</h3>
-        <p>Creem webs modernes i e-commerce optimitzats perquè venguis més i millor.</p>
+        <p>Creem webs modernes, ràpides i orientades a la conversió.</p>
       </div>
       <div class="card fade-item">
         <i class="fas fa-share-alt icon"></i>
         <h3>Xarxes socials</h3>
-        <p>Gestió i creació de contingut que transforma seguidors en clients.</p>
+        <p>Creem contingut que transforma seguidors en clients fidels.</p>
       </div>
     </div>
   </section>
@@ -87,56 +105,32 @@
   <!-- SERVICES -->
   <section id="services" class="services fade-section">
     <h2>Què fem per tu?</h2>
-    <p>Dissenyem solucions digitals adaptades a cada negoci. El nostre enfocament és global, però el resultat és personalitzat.</p>
-    
+    <p>Dissenyem solucions digitals adaptades a cada negoci. L’enfocament és global, però el resultat, personalitzat.</p>
     <div class="grid">
-      <div class="card fade-item">
-        <i class="fas fa-paint-brush icon"></i>
-        <h3>Branding & Disseny gràfic</h3>
-        <p>Creem identitats visuals memorables i coherents que transmetin l’essència de la teva marca.</p>
-      </div>
-      <div class="card fade-item">
-        <i class="fas fa-route icon"></i>
-        <h3>Estratègia digital</h3>
-        <p>Definim el full de ruta perquè el teu negoci tingui creixement i resultats clars.</p>
-      </div>
-      <div class="card fade-item">
-        <i class="fas fa-hashtag icon"></i>
-        <h3>Gestió de xarxes socials</h3>
-        <p>Creem contingut atractiu i connectem amb la teva comunitat de seguidors.</p>
-      </div>
-      <div class="card fade-item">
-        <i class="fas fa-laptop-code icon"></i>
-        <h3>Web & e-commerce</h3>
-        <p>Desenvolupem webs modernes, ràpides i pensades per convertir visites en clients.</p>
-      </div>
-      <div class="card fade-item">
-        <i class="fas fa-video icon"></i>
-        <h3>Producció audiovisual</h3>
-        <p>Fotografia i vídeo professionals per donar més força i credibilitat al teu missatge.</p>
-      </div>
+      <div class="card fade-item"><i class="fas fa-paint-brush icon"></i><h3>Branding & Disseny</h3><p>Identitats visuals coherents i memorables que transmeten la teva essència.</p></div>
+      <div class="card fade-item"><i class="fas fa-route icon"></i><h3>Estratègia digital</h3><p>Definim un camí clar per fer créixer el teu negoci.</p></div>
+      <div class="card fade-item"><i class="fas fa-hashtag icon"></i><h3>Xarxes socials</h3><p>Contingut i comunitat que connecten amb el teu públic.</p></div>
+      <div class="card fade-item"><i class="fas fa-laptop-code icon"></i><h3>Web & e-commerce</h3><p>Webs modernes, optimitzades i orientades a vendes.</p></div>
+      <div class="card fade-item"><i class="fas fa-video icon"></i><h3>Producció audiovisual</h3><p>Fotografia i vídeo professionals per donar força al teu missatge.</p></div>
     </div>
   </section>
 
-  <!-- PROJECTES -->
+  <!-- PROJECTS -->
   <section id="projects" class="projects fade-section">
     <h2>Treballs destacats.</h2>
-    <p>Cada projecte és una història d’impacte. Aquí en tens alguns exemples:</p>
+    <p>Cada projecte és una història d’impacte. Aquí en tens alguns:</p>
     <div class="grid cards">
-      <div class="card fade-item">
-        <img src="assets/img/project1.jpeg" alt="Projecte A">
-        <h3>Projecte A</h3>
-        <p>Creació d'una web corporativa per a una marca local amb resultats espectaculars.</p>
+      <div class="card fade-item project-card">
+        <img src="assets/img/project1.jpeg" alt="Projecte A" loading="lazy" />
+        <div class="overlay"><h3>Projecte A</h3><a href="assets/img/project1.jpeg" class="btn-view">Veure projecte</a></div>
       </div>
-      <div class="card fade-item">
-        <img src="assets/img/project2.jpeg" alt="Projecte B">
-        <h3>Projecte B</h3>
-        <p>Estratègia de xarxes socials que va triplicar la comunitat online.</p>
+      <div class="card fade-item project-card">
+        <img src="assets/img/project2.jpeg" alt="Projecte B" loading="lazy" />
+        <div class="overlay"><h3>Projecte B</h3><a href="assets/img/project2.jpeg" class="btn-view">Veure projecte</a></div>
       </div>
-      <div class="card fade-item">
-        <img src="assets/img/project3.jpeg" alt="Projecte C">
-        <h3>Projecte C</h3>
-        <p>Projecte de fotografia i video per una marca local.</p>
+      <div class="card fade-item project-card">
+        <img src="assets/img/project3.jpeg" alt="Projecte C" loading="lazy" />
+        <div class="overlay"><h3>Projecte C</h3><a href="assets/img/project3.jpeg" class="btn-view">Veure projecte</a></div>
       </div>
     </div>
   </section>
@@ -144,28 +138,28 @@
   <!-- TESTIMONIS -->
   <section class="testimonials fade-section">
     <h2>Ja confien en nosaltres.</h2>
-    <blockquote>“Impact Studio 360 ens ha ajudat a multiplicar la nostra presència online. Ara no només ens veuen, sinó que també ens trien.”</blockquote>
+    <div class="testimonial-slider">
+      <blockquote>“Impact Studio 360 ens ha ajudat a multiplicar la nostra presència online. Ara no només ens veuen, sinó que també ens trien.”</blockquote>
+      <blockquote>“Gràcies a l’equip, hem aconseguit augmentar les vendes i tenir una imatge molt més professional.”</blockquote>
+    </div>
   </section>
 
   <!-- CONTACTE -->
   <section id="contact" class="contact fade-section">
     <h2>Parlem?</h2>
-    <p>Estem preparats per escoltar-te i fer créixer la teva marca.</p>
-    
+    <p>Explica’ns el teu projecte i fem-lo créixer junts.</p>
     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="8c9f334f-0976-42d0-987e-6f0a79011517">
-      <input type="text" name="name" placeholder="Nom" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Missatge" required></textarea>
-      <button type="submit" class="cta">Enviar</button>
+      <input type="hidden" name="access_key" value="8c9f334f-0976-42d0-987e-6f0a79011517" />
+      <input type="text" name="name" placeholder="El teu nom complet" required />
+      <input type="email" name="email" placeholder="El teu correu electrònic" required />
+      <textarea name="message" placeholder="Explica’ns què t’agradaria aconseguir" required></textarea>
+      <button type="submit" class="cta send-btn">Enviar</button>
     </form>
-
     <div id="form-result" class="form-result"></div>
-
     <div class="info">
       <p>📧 hola@impactstudio360.com</p>
       <p>☎️ +34 600 000 000</p>
-      <p>Segueix-nos:
+      <p>Segueix-nos: 
         <a href="https://instagram.com/impactstudio360" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://facebook.com/impactstudio360" target="_blank"><i class="fab fa-facebook"></i></a>
       </p>
@@ -174,10 +168,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Impact Studio 360. Tots els drets reservats.</p>
-    <nav>
-      <a href="#">Privacitat</a> | <a href="#">Termes</a>
-    </nav>
+    <p>&copy; 2025 Impact Studio 360 · Fet amb ❤️ per l’equip.</p>
+    <nav><a href="#">Privacitat</a> | <a href="#">Termes</a></nav>
     <div class="social">
       <a href="https://instagram.com/impactstudio360" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://facebook.com/impactstudio360" target="_blank"><i class="fab fa-facebook"></i></a>
