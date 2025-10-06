@@ -1,12 +1,15 @@
 /* ==============================
-   IMPACT STUDIO 360 - JS
+   IMPACT STUDIO 360 - JS ROBUST
 ============================== */
 
-// ----- MENÚ MÒBIL -----
-const hamburger = document.querySelector('.hamburger');
-const nav = document.getElementById('mainNav');
+// Helper segur per capturar errors d'inicialització
+const safe = (fn) => { try { fn(); } catch(e) { console.error(e); } };
 
-if (hamburger && nav) {
+// ----- MENÚ MÒBIL -----
+safe(() => {
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.getElementById('mainNav');
+  if (!hamburger || !nav) return;
   hamburger.addEventListener('click', () => {
     const open = nav.classList.toggle('active');
     hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -14,64 +17,78 @@ if (hamburger && nav) {
   nav.querySelectorAll('a').forEach(a =>
     a.addEventListener('click', () => nav.classList.remove('active'))
   );
-}
-
-// ----- HEADER SCROLL (canvia mida logo) -----
-const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) header.classList.add('scrolled');
-  else header.classList.remove('scrolled');
 });
 
-// ----- REVEAL ON SCROLL (seqüencial a hero i general) -----
-const revealEls = document.querySelectorAll('.reveal');
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.25 });
+// ----- HEADER SCROLL -----
+safe(() => {
+  const header = document.querySelector('header');
+  if (!header) return;
+  const onScroll = () => {
+    if (window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll);
+});
 
-revealEls.forEach(el => revealObs.observe(el));
+// ----- REVEAL ON SCROLL (fallback inclòs) -----
+safe(() => {
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
 
-// ----- COUNT-UP (amb % en span separat) -----
-(function initCounters() {
+  const reveal = (el) => el.classList.add('visible');
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.25 });
+    els.forEach(el => io.observe(el));
+  } else {
+    // Fallback navegadors antics
+    els.forEach(reveal);
+  }
+});
+
+// ----- COUNT-UP (amb fallback si no hi ha IO) -----
+safe(() => {
   const counters = document.querySelectorAll('.stats strong[data-target]');
   if (!counters.length) return;
 
-  const inView = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+  const run = (el) => {
+    const target = Number(el.getAttribute('data-target')) || 0;
+    const duration = 1400;
+    const start = performance.now();
+    const step = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      el.textContent = Math.floor(p * target);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target; // clava valor final
+    };
+    requestAnimationFrame(step);
+  };
 
-      const el = entry.target;
-      const target = Number(el.getAttribute('data-target')) || 0;
-      let start = 0;
-      const duration = 1400;
-      const startTime = performance.now();
+  const startAll = () => counters.forEach(run);
 
-      function animate(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const value = Math.floor(progress * target);
-        el.textContent = value;
-        if (progress < 1) requestAnimationFrame(animate);
-        else el.textContent = target;
-      }
-      requestAnimationFrame(animate);
-
-      inView.unobserve(el);
-    });
-  }, { threshold: 0.45 });
-
-  counters.forEach(c => inView.observe(c));
-})();
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { run(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.45 });
+    counters.forEach(c => io.observe(c));
+  } else {
+    startAll();
+  }
+});
 
 // ----- FORMULARI (feedback) -----
-const form = document.getElementById('contact-form');
-const result = document.getElementById('form-result');
+safe(() => {
+  const form = document.getElementById('contact-form');
+  const result = document.getElementById('form-result');
+  if (!form || !result) return;
 
-if (form && result) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     result.textContent = 'Enviant missatge...';
@@ -80,7 +97,6 @@ if (form && result) {
     try {
       const res = await fetch(form.action, { method: form.method, body: new FormData(form) });
       if (!res.ok) throw new Error('Error');
-
       result.textContent = '✅ Gràcies! Hem rebut el teu missatge.';
       result.style.background = '#e8f9e8';
       result.style.color = '#2b7a0b';
@@ -91,4 +107,4 @@ if (form && result) {
       result.style.color = '#a40000';
     }
   });
-}
+});
