@@ -3,22 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impact Studio 360 | Gestió de Xarxes Socials i Estratègia Digital</title>
-  <meta name="description" content="Impact Studio 360 t’ajuda a fer créixer la teva marca a xarxes socials amb estratègia, creativitat i resultats. Especialistes en Instagram, Facebook i comunicació digital.">
-  <link rel="stylesheet" href="style.css?v=5" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <title>Impact Studio 360 — Gestió de Xarxes, Disseny i Web</title>
+  <meta name="description" content="Gestió de xarxes socials, community management, estratègia digital, branding i webs. Fem que la teva marca destaqui i converteixi." />
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="assets/img/logo.png" alt="Impact Studio 360" />
+      <a href="#home" aria-label="Inici">
+        <img src="assets/img/logo.png" alt="Impact Studio 360">
+      </a>
     </div>
 
-    <button id="menuToggle" class="hamburger" aria-label="Menú">☰</button>
+    <button class="hamburger" aria-label="Menú" aria-controls="mainNav" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-    <nav id="mainNav">
+    <nav id="mainNav" class="nav">
       <ul>
         <li><a href="#home">Inici</a></li>
         <li><a href="#about">Agència</a></li>
@@ -33,128 +40,209 @@
 
   <!-- Hero -->
   <section id="home" class="hero">
-    <div class="hero-inner">
+    <div class="container hero-inner">
       <div class="hero-brand">
-        <img src="assets/img/logo.png" alt="Impact Studio 360" class="hero-logo" />
-        <p class="hero-sub">Gestió de xarxes socials i estratègia digital per empreses que volen destacar.</p>
+        <img class="hero-logo" src="assets/img/logo.png" alt="Impact Studio 360">
+        <p class="hero-sub">Gestió de xarxes socials i estratègia digital per a empreses que volen destacar.</p>
       </div>
+
       <div class="hero-copy">
         <h1>Fes que la teva marca brilli a xarxes. Nosaltres t’hi ajudem.</h1>
         <p>Transformem la presència digital de la teva marca perquè deixi de ser invisible. Estratègia, contingut i experiències que converteixen.</p>
-        <a href="#contact" class="cta">Parlem del teu projecte</a>
+        <a href="#contact" class="cta">Vull que em coneguin</a>
       </div>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- El teu partner digital 360º -->
   <section id="about" class="about">
-    <h2>El teu partner digital 360º</h2>
-    <p>Unim estratègia, creativitat i tecnologia per impulsar la teva presència online.</p>
+    <div class="container">
+      <header class="section-head">
+        <h2>El teu partner digital 360º</h2>
+        <p>Impact Studio 360 és una agència creativa i estratègica. Des de la idea fins al resultat, unim estratègia, disseny i tecnologia per generar impacte real.</p>
+      </header>
 
-    <div class="grid">
-      <div class="card">
-        <i class="fas fa-chess-board icon"></i>
-        <h3>Estratègia</h3>
-        <p>Planifiquem el camí perquè la teva marca creixi amb objectius clars.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-bullhorn icon"></i>
-        <h3>Màrqueting</h3>
-        <p>Connectem amb el teu públic amb campanyes creatives i efectives.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-code icon"></i>
-        <h3>Desenvolupament web</h3>
-        <p>Webs modernes i optimitzades per convertir visites en clients.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-hashtag icon"></i>
-        <h3>Xarxes socials</h3>
-        <p>Contingut atractiu i gestió que genera comunitat i vendes.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="icon"><i class="fa-solid fa-route"></i></div>
+          <h3>Estratègia</h3>
+          <p>Full de ruta amb objectius clars i indicadors per prendre decisions amb dades.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3>Màrqueting</h3>
+          <p>Campanyes que connecten amb el teu públic i fan créixer el negoci.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i class="fa-solid fa-code"></i></div>
+          <h3>Desenvolupament</h3>
+          <p>Webs modernes i e-commerce ràpids, segurs i enfocats a conversió.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon"><i class="fa-solid fa-hashtag"></i></div>
+          <h3>Xarxes socials</h3>
+          <p>Community management i contingut que transforma seguidors en clients.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Serveis -->
   <section id="services" class="services">
-    <h2>Què fem per tu?</h2>
-    <p>Dissenyem estratègies i contingut perquè la teva marca destaqui a xarxes.</p>
-    
-    <div class="grid">
-      <div class="card">
-        <i class="fas fa-paint-brush icon"></i>
-        <h3>Branding</h3>
-        <p>Creem identitats visuals potents i coherents amb el teu negoci.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-route icon"></i>
-        <h3>Estratègia digital</h3>
-        <p>Definim la millor ruta perquè la teva marca creixi amb sentit.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-hashtag icon"></i>
-        <h3>Gestió de xarxes socials</h3>
-        <p>Planificació i creació de continguts per Instagram, Facebook i més.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-video icon"></i>
-        <h3>Contingut audiovisual</h3>
-        <p>Fotos i vídeos que donen vida i credibilitat a la teva marca.</p>
+    <div class="container">
+      <header class="section-head">
+        <h2>Què fem per tu?</h2>
+        <p>Solucions digitals adaptades al teu negoci. Global en enfocament, personalitzades en execució.</p>
+      </header>
+
+      <div class="cards services-cards">
+        <article class="card">
+          <div class="icon brand"><i class="fa-solid fa-pen-ruler"></i></div>
+          <h3>Branding & Disseny</h3>
+          <p>Identitats visuals memorables i coherents que transmeten l’essència de la marca.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon route"><i class="fa-solid fa-route"></i></div>
+          <h3>Estratègia digital</h3>
+          <p>Mapa d’objectius, canals i KPI per fer créixer el negoci de manera sostenible.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon social"><i class="fa-solid fa-hashtag"></i></div>
+          <h3>Gestió de xarxes</h3>
+          <p>Calendari, creativitats i community management per a Instagram, TikTok i més.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon web"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Web & e-commerce</h3>
+          <p>Webs ràpides i SEO-friendly, amb disseny cuidat i enfocades a convertir.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon video"><i class="fa-solid fa-video"></i></div>
+          <h3>Producció audiovisual</h3>
+          <p>Foto i vídeo professionals per donar força i credibilitat al teu missatge.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Projectes -->
   <section id="projects" class="projects">
-    <h2>Projectes recents</h2>
-    <p>Alguns exemples de marques que ja han confiat en nosaltres.</p>
+    <div class="container">
+      <header class="section-head">
+        <h2>Projectes destacats</h2>
+        <p>Cada projecte és una història d’impacte. Mira’n alguns exemples:</p>
+      </header>
 
-    <div class="grid">
-      <div class="card">
-        <img src="assets/img/project1.jpeg" alt="Projecte 1">
-        <h3>Restaurant Brasa & Foc</h3>
-        <p>Gestió de xarxes i estratègia digital que va duplicar la seva comunitat.</p>
-      </div>
-      <div class="card">
-        <img src="assets/img/project2.jpeg" alt="Projecte 2">
-        <h3>Centre Estètic Línia</h3>
-        <p>Creació de contingut visual i campanyes d’Instagram Ads amb resultats.</p>
-      </div>
-      <div class="card">
-        <img src="assets/img/project3.jpeg" alt="Projecte 3">
-        <h3>Marca de Moda Urbana</h3>
-        <p>Estratègia d’influencers i disseny gràfic per potenciar vendes online.</p>
+      <div class="cards project-cards">
+        <!-- Card 1 -->
+        <article class="project-card">
+          <figure class="thumb">
+            <img src="assets/img/project1.jpeg" alt="Projecte A — Web corporativa" />
+          </figure>
+          <div class="content">
+            <h3>Projecte A</h3>
+            <p>Web corporativa per a una marca local amb resultats espectaculars.</p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="project-card">
+          <figure class="thumb">
+            <img src="assets/img/project2.jpeg" alt="Projecte B — Xarxes socials" />
+          </figure>
+          <div class="content">
+            <h3>Projecte B</h3>
+            <p>Estrategia de xarxes socials que va triplicar la comunitat online.</p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="project-card">
+          <figure class="thumb">
+            <img src="assets/img/project3.jpeg" alt="Projecte C — Producció audiovisual" />
+          </figure>
+          <div class="content">
+            <h3>Projecte C</h3>
+            <p>Projecte de fotografia i vídeo per a una marca local.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contacte -->
   <section id="contact" class="contact">
-    <h2>Parlem?</h2>
-    <p>Explica’ns el teu projecte i et donarem la millor estratègia digital.</p>
+    <div class="container">
+      <header class="section-head">
+        <h2>Parlem?</h2>
+        <p>Explica’ns el teu projecte. Et respondrem aviat.</p>
+      </header>
 
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="8c9f334f-0976-42d0-987e-6f0a79011517" />
-      <input type="text" name="name" placeholder="Nom" required />
-      <input type="email" name="email" placeholder="Correu electrònic" required />
-      <textarea name="message" placeholder="Missatge" required></textarea>
-      <button type="submit" class="cta">Enviar missatge</button>
-    </form>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <ul>
+            <li><i class="fa-regular fa-envelope"></i> <a href="mailto:hola@impactstudio360.com">hola@impactstudio360.com</a></li>
+            <li><i class="fa-brands fa-instagram"></i> <a href="https://instagram.com/impactstudio360" target="_blank" rel="noopener">Instagram</a></li>
+            <li><i class="fa-brands fa-facebook"></i> <a href="https://facebook.com/impactstudio360" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
 
-    <div class="info">
-      <p>📧 hola@impactstudio360.com</p>
-      <p>Segueix-nos:
-        <a href="https://instagram.com/impactstudio360" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com/impactstudio360" target="_blank"><i class="fab fa-facebook"></i></a>
-      </p>
+        <form id="contactForm" class="form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Web3Forms -->
+          <input type="hidden" name="access_key" value="8c9f334f-0976-42d0-987e-6f0a79011517" />
+          <input type="hidden" name="subject" value="Missatge nou des del formulari d'Impact Studio 360" />
+          <input type="checkbox" name="botcheck" style="display:none;" />
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" placeholder="El teu nom" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="elmeu@email.com" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Missatge</label>
+            <textarea id="message" name="message" rows="6" placeholder="Explica’ns què necessites" required></textarea>
+          </div>
+
+          <button type="submit" class="cta form-cta">Enviar</button>
+
+          <p id="formSuccess" class="form-note ok" hidden>✔ Missatge enviat. Gràcies! 👋</p>
+          <p id="formError" class="form-note ko" hidden>✖ Hi ha hagut un error. Torna-ho a provar.</p>
+        </form>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Impact Studio 360. Tots els drets reservats.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 Impact Studio 360. Tots els drets reservats.</p>
+      <nav class="footer-links">
+        <a href="#home">Inici</a>
+        <a href="#about">Agència</a>
+        <a href="#services">Serveis</a>
+        <a href="#projects">Projectes</a>
+        <a href="#contact">Contacte</a>
+      </nav>
+      <div class="social">
+        <a href="https://instagram.com/impactstudio360" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/impactstudio360" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js"></script>
 </body>
 </html>
