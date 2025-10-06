@@ -5,14 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!hamburger || !nav) return;
 
-  hamburger.addEventListener('click', e => {
+  hamburger.addEventListener('click', (e) => {
     e.preventDefault();
-    const isOpen = nav.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    nav.classList.toggle('active');
+    const expanded = nav.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', expanded);
   });
 
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
+  // Tanquem el menú al clicar un enllaç
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
       nav.classList.remove('active');
       hamburger.setAttribute('aria-expanded', 'false');
     });
