@@ -3,18 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impact Studio 360 | Agència digital 360º</title>
-  <meta name="description" content="Impact Studio 360 és una agència digital que impulsa marques amb estratègia, disseny, contingut i tecnologia per fer-les visibles i rendibles.">
-  <meta name="keywords" content="impact studio 360, màrqueting digital, disseny web, xarxes socials, branding, desenvolupament web, estratègia digital">
-  <meta name="author" content="Impact Studio 360">
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
-
-  <!-- Fonts i icones -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- CSS -->
+  <title>Impact Studio 360</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Montserrat font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -49,6 +44,7 @@
       <div class="hero-text">
         <h1>Si ningú et coneix, ningú et compra.</h1>
         <p>A Impact Studio 360 transformem la presència digital de la teva marca perquè deixi de ser invisible. Creem estratègies que connecten, continguts que atrauen i experiències digitals que converteixen.</p>
+        <!-- CTA principal -->
         <a href="#contact" class="cta">Vull que em coneguin</a>
       </div>
     </div>
@@ -77,16 +73,19 @@
         <h3>Estratègia</h3>
         <p>Traçem el full de ruta perquè la teva marca creixi amb una direcció clara.</p>
       </div>
+
       <div class="card">
         <i class="fas fa-bullhorn icon"></i>
         <h3>Màrqueting</h3>
         <p>Connectem la teva marca amb el teu públic a través de campanyes efectives.</p>
       </div>
+
       <div class="card">
         <i class="fas fa-code icon"></i>
         <h3>Desenvolupament</h3>
         <p>Creem webs modernes i e-commerce optimitzats perquè venguis més i millor.</p>
       </div>
+
       <div class="card">
         <i class="fas fa-share-alt icon"></i>
         <h3>Xarxes socials</h3>
@@ -103,24 +102,28 @@
     <div class="grid">
       <div class="card">
         <i class="fas fa-paint-brush icon"></i>
-        <h3>Branding & Disseny gràfic</h3>
+        <h3>Branding &amp; Disseny gràfic</h3>
         <p>Creem identitats visuals memorables i coherents que transmetin l’essència de la teva marca.</p>
       </div>
+      
       <div class="card">
         <i class="fas fa-route icon"></i>
         <h3>Estratègia digital</h3>
         <p>Definim el full de ruta perquè el teu negoci tingui creixement i resultats clars.</p>
       </div>
+      
       <div class="card">
         <i class="fas fa-hashtag icon"></i>
         <h3>Gestió de xarxes socials</h3>
         <p>Creem contingut atractiu i connectem amb la teva comunitat de seguidors.</p>
       </div>
+      
       <div class="card">
         <i class="fas fa-laptop-code icon"></i>
-        <h3>Web & e-commerce</h3>
+        <h3>Web &amp; e-commerce</h3>
         <p>Desenvolupem webs modernes, ràpides i pensades per convertir visites en clients.</p>
       </div>
+      
       <div class="card">
         <i class="fas fa-video icon"></i>
         <h3>Producció audiovisual</h3>
@@ -135,19 +138,21 @@
     <p>Cada projecte és una història d’impacte. Aquí en tens alguns exemples:</p>
     <div class="grid cards">
       <div class="card">
-        <img src="assets/img/project1.jpeg" alt="Projecte A" loading="lazy">
+        <img src="assets/img/project1.jpeg" alt="Projecte A">
         <h3>Projecte A</h3>
         <p>Creació d'una web corporativa per a una marca local amb resultats espectaculars.</p>
       </div>
+
       <div class="card">
-        <img src="assets/img/project2.jpeg" alt="Projecte B" loading="lazy">
+        <img src="assets/img/project2.jpeg" alt="Projecte B">
         <h3>Projecte B</h3>
         <p>Estratègia de xarxes socials que va triplicar la comunitat online.</p>
       </div>
+
       <div class="card">
-        <img src="assets/img/project3.jpeg" alt="Projecte C" loading="lazy">
+        <img src="assets/img/project3.jpeg" alt="Projecte C">
         <h3>Projecte C</h3>
-        <p>Projecte de fotografia i vídeo per una marca local.</p>
+        <p>Projecte de fotografia i video per una marca local.</p>
       </div>
     </div>
   </section>
@@ -155,23 +160,30 @@
   <!-- Testimonis -->
   <section class="testimonials">
     <h2>Ja confien en nosaltres.</h2>
-    <blockquote>“Impact Studio 360 ens ha ajudat a multiplicar la nostra presència online. Ara no només ens veuen, sinó que també ens trien.”</blockquote>
+    <blockquote>
+      “Impact Studio 360 ens ha ajudat a multiplicar la nostra presència online. Ara no només ens veuen, sinó que també ens trien.”
+    </blockquote>
   </section>
 
   <!-- Contacte -->
   <section id="contact" class="contact">
     <h2>Parlem?</h2>
     <p>Estem preparats per escoltar-te i fer créixer la teva marca.</p>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="nom" placeholder="Nom" required>
+    
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="8c9f334f-0976-42d0-987e-6f0a79011517">
+
+      <input type="text" name="name" placeholder="Nom" required>
       <input type="email" name="email" placeholder="Email" required>
-      <textarea name="missatge" placeholder="Missatge" required></textarea>
+      <textarea name="message" placeholder="Missatge" required></textarea>
+
       <button type="submit" class="cta">Enviar</button>
     </form>
+
     <div class="info">
       <p>📧 hola@impactstudio360.com</p>
       <p>☎️ +34 600 000 000</p>
-      <p>Segueix-nos:
+      <p>Segueix-nos: 
         <a href="https://instagram.com/impactstudio360" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://facebook.com/impactstudio360" target="_blank"><i class="fab fa-facebook"></i></a>
       </p>
@@ -185,12 +197,16 @@
       <a href="#">Privacitat</a> | <a href="#">Termes</a>
     </nav>
     <div class="social">
-      <a href="https://instagram.com/impactstudio360" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/impactstudio360" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com/impactstudio360" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://facebook.com/impactstudio360" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- Script -->
   <script src="script.js?v=3"></script>
 </body>
 </html>
