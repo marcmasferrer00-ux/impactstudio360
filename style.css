@@ -1,13 +1,16 @@
-/* --- Estils generals --- */
+/* ===============================
+   ESTILS GENERALS
+================================= */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #ffffff;
   color: #333333;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-weight: 700;
   color: #000000;
   margin-top: 0;
@@ -20,10 +23,10 @@ p {
 
 ul {
   padding: 0;
-  margin: 0;
+  list-style: none;
 }
 
-/* Links */
+/* Enllaços */
 a {
   text-decoration: none;
   color: inherit;
@@ -34,7 +37,25 @@ a:hover {
   color: #E30613;
 }
 
-/* --- Header --- */
+/* Botó CTA */
+.cta {
+  display: inline-block;
+  background: #E30613;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta:hover {
+  background: #c20510;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   HEADER
+================================= */
 header {
   position: sticky;
   top: 0;
@@ -51,40 +72,43 @@ header {
   height: 40px;
 }
 
+/* Navegació desktop */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+}
+
+header nav ul li a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
 /* Botó hamburguesa */
 .hamburger {
-  display: none;     /* només es mostra en mòbil */
+  display: none;
   font-size: 2rem;
   background: none;
   border: none;
   cursor: pointer;
   line-height: 1;
   position: relative;
-  z-index: 2100;     /* per sobre del nav */
+  z-index: 2100;
 }
 
-/* Navegació header (desktop) */
-header nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-header nav ul {
-  display: flex;              /* ✅ horitzontal */
-  flex-direction: row;
-  gap: 20px;
-  list-style: none;
-}
-
-header nav ul li a {
-  font-weight: 500;
-  color: #333;
-}
-
-/* --- Hero --- */
+/* ===============================
+   HERO
+================================= */
 .hero {
-  padding: 30px 10px;
+  padding: 60px 10px;
   background: #f2f2f2;
 }
 
@@ -106,29 +130,18 @@ header nav ul li a {
 }
 
 .hero-text h1 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   margin-bottom: 20px;
 }
 
 .hero-text p {
   margin-bottom: 20px;
+  font-size: 1.05rem;
 }
 
-.cta {
-  background: #E30613;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-weight: 700;
-  transition: background 0.2s ease;
-  display: inline-block;
-}
-
-.cta:hover {
-  background: #b0050f;
-}
-
-/* --- Stats --- */
+/* ===============================
+   STATS
+================================= */
 .stats {
   text-align: center;
   padding: 60px 20px;
@@ -147,7 +160,9 @@ header nav ul li a {
   color: #E30613;
 }
 
-/* --- About --- */
+/* ===============================
+   ABOUT
+================================= */
 .about {
   padding: 60px 20px;
   background: #f9f9f9;
@@ -175,15 +190,9 @@ header nav ul li a {
 }
 
 .about .icon {
-  width: 56px;
-  height: auto;
+  font-size: 2.8rem;
+  color: #E30613;
   margin-bottom: 14px;
-  filter: brightness(0);
-  transition: filter 0.3s ease;
-}
-
-.about .card:hover .icon {
-  filter: invert(23%) sepia(98%) saturate(7499%) hue-rotate(353deg) brightness(90%) contrast(110%);
 }
 
 .about h3 {
@@ -195,7 +204,9 @@ header nav ul li a {
   color: #555;
 }
 
-/* --- Serveis --- */
+/* ===============================
+   SERVEIS
+================================= */
 .services {
   padding: 60px 20px;
   background: #ffffff;
@@ -226,12 +237,6 @@ header nav ul li a {
   font-size: 50px;
   color: #E30613;
   margin-bottom: 15px;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.services .card:hover .icon {
-  transform: scale(1.2);
-  color: #000000;
 }
 
 .services h3 {
@@ -244,9 +249,11 @@ header nav ul li a {
   color: #555;
 }
 
-/* --- Projectes --- */
+/* ===============================
+   PROJECTES
+================================= */
 .projects {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
   background: #f9f9f9;
 }
@@ -270,11 +277,11 @@ header nav ul li a {
 .projects .card {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease;
-  width: 250px;
+  width: 260px;
 }
 
 .projects .card:hover {
@@ -283,11 +290,9 @@ header nav ul li a {
 
 .projects .card img {
   width: 100%;
-  height: auto;
-  max-height: 350px;
-  object-fit: contain;
+  height: 200px;
+  object-fit: cover;
   display: block;
-  margin: 0 auto;
 }
 
 .projects .card h3 {
@@ -301,11 +306,13 @@ header nav ul li a {
   color: #444;
 }
 
-/* --- Testimonis --- */
+/* ===============================
+   TESTIMONIS
+================================= */
 .testimonials {
   padding: 60px 20px;
-  background: #333333;
-  color: #ffffff;
+  background: #333;
+  color: #fff;
   text-align: center;
 }
 
@@ -317,7 +324,9 @@ header nav ul li a {
   font-size: 1.2rem;
 }
 
-/* --- Contacte --- */
+/* ===============================
+   CONTACTE
+================================= */
 .contact {
   padding: 60px 20px;
   text-align: center;
@@ -334,14 +343,16 @@ header nav ul li a {
 
 .contact input,
 .contact textarea {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-family: inherit;
+  font-size: 1rem;
 }
 
 .contact textarea {
   min-height: 120px;
+  resize: vertical;
 }
 
 .contact button {
@@ -349,14 +360,19 @@ header nav ul li a {
   cursor: pointer;
 }
 
-.contact .info p {
-  margin: 5px 0;
+/* Missatge de resultat (coherent amb la web) */
+.form-result {
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: 500;
 }
 
-/* --- Footer --- */
+/* ===============================
+   FOOTER
+================================= */
 footer {
-  background: #000000;
-  color: #ffffff;
+  background: #000;
+  color: #fff;
   text-align: center;
   padding: 20px;
 }
@@ -381,7 +397,9 @@ footer .social a:hover {
   color: #E30613;
 }
 
-/* --- Responsive --- */
+/* ===============================
+   RESPONSIVE
+================================= */
 @media (max-width: 1024px) {
   .hero-container {
     flex-direction: column;
@@ -396,97 +414,10 @@ footer .social a:hover {
   .hero-text {
     max-width: 100%;
   }
-
-  .stats .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .projects .grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+  .desktop-only { display: none; }
+  .hamburger { display: block; }
 
-  header nav {
-    display: none;
-  }
-
-  /* Menú desplegable mòbil */
-  #mainNav {
-    position: fixed;
-    top: 60px;
-    left: 0; right: 0;
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    padding: 16px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,.12);
-    z-index: 2050;
-  }
-
-  #mainNav.active {
-    display: flex;
-  }
-
-  #mainNav ul {
-    flex-direction: column;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-  }
-
-  #mainNav ul li a {
-    font-size: 1.2rem;
-    padding: 10px 0;
-  }
-
-  /* Hero mòbil compacte */
-  .hero-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .hero-logo img {
-    height: 140px;
-  }
-
-  .hero-text {
-    max-width: 90%;
-  }
-
-  .hero-text h1 {
-    font-size: 1.6rem;
-    line-height: 1.3;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-
-  .stats .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .projects .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .projects .card {
-    width: 90%;
-  }
-
-  .contact form {
-    width: 100%;
-    padding: 0 10px;
-  }
-}
+  /* Men
