@@ -7,12 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   hamburger.addEventListener('click', (e) => {
     e.preventDefault();
-    nav.classList.toggle('active');
-    const expanded = nav.classList.contains('active');
-    hamburger.setAttribute('aria-expanded', expanded);
+    const isOpen = nav.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 
-  // Tanquem el menú al clicar un enllaç
+  // Tancar menú en clicar un enllaç
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('active');
