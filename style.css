@@ -1,16 +1,13 @@
-/* ===============================
-   ESTILS GENERALS
-================================= */
+/* --- Estils generals --- */
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #ffffff;
   color: #333333;
   line-height: 1.6;
-  scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
+h1, h2 {
   font-weight: 700;
   color: #000000;
   margin-top: 0;
@@ -23,10 +20,9 @@ p {
 
 ul {
   padding: 0;
-  list-style: none;
 }
 
-/* Enllaços */
+/* Links */
 a {
   text-decoration: none;
   color: inherit;
@@ -37,25 +33,7 @@ a:hover {
   color: #E30613;
 }
 
-/* Botó CTA */
-.cta {
-  display: inline-block;
-  background: #E30613;
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.cta:hover {
-  background: #c20510;
-  transform: translateY(-2px);
-}
-
-/* ===============================
-   HEADER
-================================= */
+/* --- Header --- */
 header {
   position: sticky;
   top: 0;
@@ -72,26 +50,6 @@ header {
   height: 40px;
 }
 
-/* Navegació desktop */
-header nav {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-header nav ul {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  margin: 0;
-}
-
-header nav ul li a {
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-}
-
 /* Botó hamburguesa */
 .hamburger {
   display: none;
@@ -104,11 +62,48 @@ header nav ul li a {
   z-index: 2100;
 }
 
-/* ===============================
-   HERO
-================================= */
+/* Navegació header (desktop) */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+}
+
+header nav ul li a {
+  font-weight: 500;
+  color: #222;
+  transition: color 0.2s ease;
+}
+
+header nav ul li a:hover {
+  color: #E30613;
+}
+
+/* Botó vermell header */
+header .cta {
+  background: #E30613;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+header .cta:hover {
+  background: #c20510;
+}
+
+/* --- Hero --- */
 .hero {
-  padding: 60px 10px;
+  padding: 100px 20px;
   background: #f2f2f2;
 }
 
@@ -123,6 +118,8 @@ header nav ul li a {
 
 .hero-logo img {
   height: 500px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .hero-text {
@@ -130,18 +127,33 @@ header nav ul li a {
 }
 
 .hero-text h1 {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   margin-bottom: 20px;
+  line-height: 1.2;
 }
 
 .hero-text p {
-  margin-bottom: 20px;
-  font-size: 1.05rem;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #444;
 }
 
-/* ===============================
-   STATS
-================================= */
+.cta {
+  display: inline-block;
+  background-color: #E30613;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #c20510;
+}
+
+/* --- Stats --- */
 .stats {
   text-align: center;
   padding: 60px 20px;
@@ -160,9 +172,7 @@ header nav ul li a {
   color: #E30613;
 }
 
-/* ===============================
-   ABOUT
-================================= */
+/* --- About --- */
 .about {
   padding: 60px 20px;
   background: #f9f9f9;
@@ -190,9 +200,15 @@ header nav ul li a {
 }
 
 .about .icon {
-  font-size: 2.8rem;
-  color: #E30613;
+  width: 56px;
+  height: auto;
   margin-bottom: 14px;
+  filter: brightness(0);
+  transition: filter 0.3s ease;
+}
+
+.about .card:hover .icon {
+  filter: invert(23%) sepia(98%) saturate(7499%) hue-rotate(353deg) brightness(90%) contrast(110%);
 }
 
 .about h3 {
@@ -204,9 +220,7 @@ header nav ul li a {
   color: #555;
 }
 
-/* ===============================
-   SERVEIS
-================================= */
+/* --- Serveis --- */
 .services {
   padding: 60px 20px;
   background: #ffffff;
@@ -237,6 +251,12 @@ header nav ul li a {
   font-size: 50px;
   color: #E30613;
   margin-bottom: 15px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.services .card:hover .icon {
+  transform: scale(1.2);
+  color: #000000;
 }
 
 .services h3 {
@@ -249,11 +269,9 @@ header nav ul li a {
   color: #555;
 }
 
-/* ===============================
-   PROJECTES
-================================= */
+/* --- Projectes --- */
 .projects {
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
   background: #f9f9f9;
 }
@@ -277,11 +295,11 @@ header nav ul li a {
 .projects .card {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease;
-  width: 260px;
+  width: 250px;
 }
 
 .projects .card:hover {
@@ -290,9 +308,11 @@ header nav ul li a {
 
 .projects .card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
 .projects .card h3 {
@@ -306,13 +326,11 @@ header nav ul li a {
   color: #444;
 }
 
-/* ===============================
-   TESTIMONIS
-================================= */
+/* --- Testimonis --- */
 .testimonials {
   padding: 60px 20px;
-  background: #333;
-  color: #fff;
+  background: #333333;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -324,9 +342,7 @@ header nav ul li a {
   font-size: 1.2rem;
 }
 
-/* ===============================
-   CONTACTE
-================================= */
+/* --- Contacte --- */
 .contact {
   padding: 60px 20px;
   text-align: center;
@@ -343,16 +359,14 @@ header nav ul li a {
 
 .contact input,
 .contact textarea {
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 4px;
   font-family: inherit;
-  font-size: 1rem;
 }
 
 .contact textarea {
   min-height: 120px;
-  resize: vertical;
 }
 
 .contact button {
@@ -360,19 +374,14 @@ header nav ul li a {
   cursor: pointer;
 }
 
-/* Missatge de resultat (coherent amb la web) */
-.form-result {
-  font-size: 1rem;
-  margin-top: 10px;
-  font-weight: 500;
+.contact .info p {
+  margin: 5px 0;
 }
 
-/* ===============================
-   FOOTER
-================================= */
+/* --- Footer --- */
 footer {
-  background: #000;
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
   text-align: center;
   padding: 20px;
 }
@@ -382,6 +391,7 @@ footer a {
   margin: 0 5px;
 }
 
+/* Xarxes socials al footer */
 footer .social {
   margin-top: 15px;
 }
@@ -397,9 +407,7 @@ footer .social a:hover {
   color: #E30613;
 }
 
-/* ===============================
-   RESPONSIVE
-================================= */
+/* --- Responsive --- */
 @media (max-width: 1024px) {
   .hero-container {
     flex-direction: column;
@@ -414,10 +422,114 @@ footer .social a:hover {
   .hero-text {
     max-width: 100%;
   }
+
+  .stats .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projects .grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
+/* --- MÒBIL --- */
 @media (max-width: 768px) {
-  .desktop-only { display: none; }
-  .hamburger { display: block; }
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+    background: #fff;
+  }
 
-  /* Men
+  .hamburger {
+    display: block;
+  }
+
+  #mainNav {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1900;
+  }
+
+  #mainNav.active {
+    display: flex;
+  }
+
+  #mainNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  #mainNav li {
+    margin: 10px 0;
+  }
+
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .hero-logo img {
+    height: 140px;
+  }
+
+  .hero-text {
+    max-width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .cta {
+    display: inline-block;
+    background-color: #E30613;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .cta:hover {
+    background-color: #c20510;
+  }
+
+  .stats .grid,
+  .projects .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects .card {
+    width: 90%;
+  }
+
+  .contact form {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
