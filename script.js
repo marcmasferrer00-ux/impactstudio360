@@ -1,21 +1,35 @@
-// script.js
+// Menú mòbil
 document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.getElementById('menuToggle');
+  const burger = document.getElementById('menuToggle');
   const nav = document.getElementById('mainNav');
 
-  if (!hamburger || !nav) return;
+  if (burger && nav) {
+    burger.addEventListener('click', (e) => {
+      e.preventDefault();
+      nav.classList.toggle('active');
+      burger.classList.toggle('is-open');
+      burger.setAttribute('aria-expanded', nav.classList.contains('active') ? 'true' : 'false');
+    });
 
-  hamburger.addEventListener('click', (e) => {
-    e.preventDefault();
-    const isOpen = nav.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+    // Tancar en clicar un enllaç
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('active');
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
-  // Tancar menú en clicar un enllaç
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
+  // Scroll suau
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if (el) {
+        e.preventDefault();
+        window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
+      }
     });
   });
 });
