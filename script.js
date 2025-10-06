@@ -1,4 +1,6 @@
-// Menú mòbil
+// ------------------------------
+// MENÚ MÒBIL
+// ------------------------------
 const hamburger = document.querySelector('.hamburger');
 const nav = document.getElementById('mainNav');
 
@@ -8,33 +10,57 @@ if (hamburger && nav) {
     hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
-  // Tanca el menú en clicar un enllaç
   nav.querySelectorAll('a').forEach(a =>
     a.addEventListener('click', () => nav.classList.remove('active'))
   );
 }
 
-// Enviament formulari (Web3Forms) — missatge d’èxit/error sense redirecció
-const form = document.getElementById('contactForm');
-if (form) {
-  const ok = document.getElementById('formSuccess');
-  const ko = document.getElementById('formError');
+// ------------------------------
+// ANIMACIÓ COUNT-UP STATS
+// ------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const stats = document.querySelectorAll('.stats .grid div strong');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    ok.hidden = true; ko.hidden = true;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const endValue = parseInt(el.textContent);
+        let start = 0;
+        const duration = 1800;
+        const step = Math.ceil(endValue / (duration / 16));
 
-    const data = new FormData(form);
-    try {
-      const res = await fetch(form.action, { method: 'POST', body: data });
-      if (res.ok) {
-        ok.hidden = false;
-        form.reset();
-      } else {
-        ko.hidden = false;
+        const counter = setInterval(() => {
+          start += step;
+          if (start >= endValue) {
+            el.textContent = endValue + '%';
+            clearInterval(counter);
+          } else {
+            el.textContent = start + '%';
+          }
+        }, 16);
+
+        el.parentElement.classList.add('visible');
+        observer.unobserve(el);
       }
-    } catch {
-      ko.hidden = false;
+    });
+  }, { threshold: 0.5 });
+
+  stats.forEach(el => observer.observe(el));
+});
+
+// ------------------------------
+// ANIMACIÓ FADE-IN EN SCROLL
+// ------------------------------
+const fadeItems = document.querySelectorAll('.fade-item');
+
+const fadeObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
     }
   });
-}
+}, { threshold: 0.2 });
+
+fadeItems.forEach(item => fadeObserver.observe(item));
