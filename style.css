@@ -1,5 +1,5 @@
 /* =========================================
-   IMPACT STUDIO 360 - ESTILS PRINCIPALS
+   IMPACT STUDIO 360 - ESTILS GLOBALS
    Autor: Marc Masferrer / 2025
    ========================================= */
 
@@ -18,9 +18,10 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #fff;
+  background: #fff;
   color: #222;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ------------------------------
@@ -66,10 +67,21 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
 }
 
 .logo img {
   height: 65px;
+  transition: height 0.3s ease;
+}
+
+header.scrolled .logo img {
+  height: 55px;
 }
 
 nav ul {
@@ -88,23 +100,31 @@ nav a:hover {
   color: #e63946;
 }
 
-/* CTA Header i botons generals */
-.cta,
-.contact button {
-  background: #e63946;
+/* Botons CTA generals */
+.cta {
+  background: linear-gradient(135deg, #e63946, #c52b38);
   color: #fff;
   padding: 12px 24px;
   border-radius: 8px;
   border: none;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.cta:hover,
-.contact button:hover {
-  background: #c52b38;
+.cta:hover {
+  background: linear-gradient(135deg, #ff4453, #e63946);
   transform: translateY(-2px);
+}
+
+/* Efecte polsació */
+.pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
 }
 
 /* Hamburguer (mòbil) */
@@ -120,26 +140,50 @@ nav a:hover {
    HERO SECTION
 ------------------------------ */
 .hero {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 180px 20px 160px;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url("assets/img/hero-bg.jpg") center/cover no-repeat;
+  height: 100vh;
+  background: url("assets/img/hero-bg.jpg") center/cover fixed no-repeat;
   color: #fff;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
 }
 
 .hero-logo img {
   width: 180px;
   margin-bottom: 25px;
+  animation: fadeInDown 1.2s ease forwards;
 }
 
 .hero h1 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
   color: #fff;
+  animation: fadeInUp 1.2s ease 0.4s forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #ff8e92;
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease 0.6s forwards;
 }
 
 .hero p {
@@ -147,10 +191,25 @@ nav a:hover {
   margin: 0 auto 2rem;
   font-size: 1.1rem;
   color: #f1f1f1;
+  animation: fadeInUp 1.2s ease 0.8s forwards;
+}
+
+/* Scroll down indicator */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  font-size: 1.5rem;
+  color: #fff;
+  animation: bounce 2s infinite;
+  z-index: 3;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
 }
 
 /* ------------------------------
-   SECCIÓ STATS (impactant)
+   STATS
 ------------------------------ */
 .stats {
   background: #fff;
@@ -161,7 +220,6 @@ nav a:hover {
 .stats h2 {
   margin-bottom: 1rem;
   font-size: 2rem;
-  font-weight: 700;
   color: #000;
 }
 
@@ -173,33 +231,31 @@ nav a:hover {
 
 .stats .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
 }
 
 .stats .grid div {
-  background: none;
-  border: none;
-  padding: 10px;
   font-weight: 500;
-  line-height: 1.4;
   color: #000;
 }
 
 .stats .grid div strong {
   display: block;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 800;
   color: #e63946;
-  margin-bottom: 5px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+  transition: text-shadow 0.3s ease;
 }
 
-.stats .grid div.visible strong {
-  opacity: 1;
-  transform: translateY(0);
+.stats .grid div:hover strong {
+  text-shadow: 0 0 10px rgba(230,57,70,0.6);
+}
+
+.stats .grid span {
+  display: block;
+  font-size: 1rem;
+  color: #555;
 }
 
 /* ------------------------------
@@ -212,6 +268,17 @@ nav a:hover {
 .about h2, .services h2 {
   margin-bottom: 1rem;
   font-size: 2rem;
+  position: relative;
+}
+
+.about h2::after, .services h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #e63946;
+  margin: 12px auto 0;
+  border-radius: 3px;
 }
 
 .about p, .services p {
@@ -231,7 +298,7 @@ nav a:hover {
   border-radius: 10px;
   padding: 30px 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+  transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(40px);
 }
@@ -243,7 +310,8 @@ nav a:hover {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, #fff, #fff5f5);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .card .icon {
@@ -265,46 +333,74 @@ nav a:hover {
   gap: 30px;
 }
 
-.projects .card {
-  max-width: 380px;
-  margin: 0 auto;
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-.projects .card img {
+.project-card img {
   border-radius: 10px;
   height: 240px;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
-.projects .card:hover img {
-  transform: scale(1.05);
+.project-card:hover img {
+  transform: scale(1.1);
 }
 
-.projects h3 {
-  margin-top: 10px;
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  font-size: 1.3rem;
   margin-bottom: 8px;
+}
+
+.btn-view {
+  background: #e63946;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-view:hover {
+  background: #c52b38;
 }
 
 /* ------------------------------
    TESTIMONIALS
 ------------------------------ */
 .testimonials {
-  background: #000;
+  background: linear-gradient(180deg, #000, #200000);
   color: #fff;
   padding: 100px 20px;
 }
 
-.testimonials h2 {
-  margin-bottom: 1.5rem;
-}
-
-.testimonials blockquote {
-  font-size: 1.2rem;
-  font-style: italic;
+.testimonial-slider blockquote {
   max-width: 700px;
   margin: 0 auto;
+  font-size: 1.2rem;
   line-height: 1.6;
+  font-style: italic;
+  animation: fadeIn 1.2s ease;
 }
 
 /* ------------------------------
@@ -336,6 +432,15 @@ nav a:hover {
   resize: vertical;
 }
 
+.send-btn {
+  transition: all 0.4s ease;
+}
+
+.send-btn:active {
+  transform: scale(0.96) rotate(-1deg);
+}
+
+/* Resultats formulari */
 .form-result {
   margin-top: 10px;
   padding: 10px;
@@ -350,24 +455,6 @@ nav a:hover {
 .form-result.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-.form-result.success {
-  background: #e8f9e8;
-  color: #2b7a0b;
-  border: 1px solid #b7e3b7;
-}
-
-.form-result.error {
-  background: #ffeaea;
-  color: #a40000;
-  border: 1px solid #ffb7b7;
-}
-
-.form-result.sending {
-  background: #f8f8f8;
-  color: #444;
-  border: 1px solid #ddd;
 }
 
 /* Contact Info */
@@ -413,8 +500,23 @@ footer .social a:hover {
 }
 
 /* ------------------------------
-   ANIMACIÓ FADE-IN
+   ANIMACIONS GENERALS
 ------------------------------ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+/* Fade scroll */
 .fade-item {
   opacity: 0;
   transform: translateY(30px);
@@ -432,13 +534,8 @@ footer .social a:hover {
 
 /* Tablets */
 @media (max-width: 992px) {
-  header {
-    padding: 15px 25px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+  header { padding: 15px 25px; }
+  .hero h1 { font-size: 2.2rem; }
 }
 
 /* Mòbil */
@@ -448,9 +545,7 @@ footer .social a:hover {
     justify-content: space-between;
   }
 
-  .hamburger {
-    display: block;
-  }
+  .hamburger { display: block; }
 
   nav {
     width: 100%;
@@ -462,11 +557,10 @@ footer .social a:hover {
     top: 70px;
     left: 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: slideDown 0.4s ease;
   }
 
-  nav.active {
-    display: flex;
-  }
+  nav.active { display: flex; }
 
   nav ul {
     flex-direction: column;
@@ -474,43 +568,16 @@ footer .social a:hover {
     gap: 15px;
   }
 
-  .desktop-only {
-    display: none;
-  }
+  .desktop-only { display: none; }
 
-  .hero {
-    padding: 140px 20px 100px;
-  }
+  .hero h1 { font-size: 1.8rem; }
+  .hero-subtitle { font-size: 1.1rem; }
 
-  .hero h1 {
-    font-size: 1.9rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 70px 20px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
+  .stats .grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* Mòbils petits */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-
-  .cta {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  footer {
-    font-size: 0.9rem;
-  }
+/* Animació menú mòbil */
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
