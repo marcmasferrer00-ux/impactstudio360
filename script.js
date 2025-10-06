@@ -16,14 +16,27 @@ if (hamburger && nav) {
   );
 }
 
-// ----- HEADER SCROLL (reducció logo al fer scroll) -----
+// ----- HEADER SCROLL (canvia mida logo) -----
 const header = document.querySelector('header');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) header.classList.add('scrolled');
   else header.classList.remove('scrolled');
 });
 
-// ----- COUNT-UP (percentatges que ja NO es queden a 0) -----
+// ----- REVEAL ON SCROLL (seqüencial a hero i general) -----
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.25 });
+
+revealEls.forEach(el => revealObs.observe(el));
+
+// ----- COUNT-UP (amb % en span separat) -----
 (function initCounters() {
   const counters = document.querySelectorAll('.stats strong[data-target]');
   if (!counters.length) return;
@@ -34,18 +47,18 @@ window.addEventListener('scroll', () => {
 
       const el = entry.target;
       const target = Number(el.getAttribute('data-target')) || 0;
-      let current = 0;
-      const duration = 1600;
+      let start = 0;
+      const duration = 1400;
       const startTime = performance.now();
 
-      function tick(now) {
+      function animate(now) {
         const progress = Math.min((now - startTime) / duration, 1);
-        current = Math.floor(progress * target);
-        el.textContent = current;
-        if (progress < 1) requestAnimationFrame(tick);
-        else el.textContent = target; // valor final exacte
+        const value = Math.floor(progress * target);
+        el.textContent = value;
+        if (progress < 1) requestAnimationFrame(animate);
+        else el.textContent = target;
       }
-      requestAnimationFrame(tick);
+      requestAnimationFrame(animate);
 
       inView.unobserve(el);
     });
@@ -54,34 +67,7 @@ window.addEventListener('scroll', () => {
   counters.forEach(c => inView.observe(c));
 })();
 
-// Afegim el símbol % als elements que tenen <span class="unit">%
-(function attachPercent() {
-  // ja es mostra el % amb span a l'HTML; només assegurem que es mostri si JS no carrega
-  document.querySelectorAll('.stat').forEach(stat => {
-    const unit = stat.querySelector('.unit');
-    if (unit) unit.style.display = 'inline-block';
-  });
-})();
-
-// ----- (Opcional) Fade-in suau de targetes (sense amagar contingut si no hi ha JS) -----
-(function revealCards() {
-  const cards = document.querySelectorAll('.card');
-  if (!cards.length) return;
-
-  // No amaguem res per defecte al CSS (ja es veu); només fem animació suau
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-
-  cards.forEach(c => obs.observe(c));
-})();
-
-// ----- FORMULARI (feedback simple) -----
+// ----- FORMULARI (feedback) -----
 const form = document.getElementById('contact-form');
 const result = document.getElementById('form-result');
 
