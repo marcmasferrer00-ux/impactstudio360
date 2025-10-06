@@ -10,6 +10,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Animació per al missatge del formulari */
+    .form-result {
+      margin-top: 15px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.6s ease, transform 0.4s ease;
+    }
+
+    .form-result.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .form-result.success {
+      background: #e8f9e8;
+      color: #2b7a0b;
+      border: 1px solid #b7e3b7;
+    }
+
+    .form-result.error {
+      background: #ffeaea;
+      color: #a40000;
+      border: 1px solid #ffb7b7;
+    }
+
+    .form-result.sending {
+      background: #f8f8f8;
+      color: #444;
+      border: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
 
@@ -44,7 +80,6 @@
       <div class="hero-text">
         <h1>Si ningú et coneix, ningú et compra.</h1>
         <p>A Impact Studio 360 transformem la presència digital de la teva marca perquè deixi de ser invisible. Creem estratègies que connecten, continguts que atrauen i experiències digitals que converteixen.</p>
-        <!-- CTA principal -->
         <a href="#contact" class="cta">Vull que em coneguin</a>
       </div>
     </div>
@@ -170,15 +205,16 @@
     <h2>Parlem?</h2>
     <p>Estem preparats per escoltar-te i fer créixer la teva marca.</p>
     
-    <form action="https://api.web3forms.com/submit" method="POST">
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="8c9f334f-0976-42d0-987e-6f0a79011517">
-
       <input type="text" name="name" placeholder="Nom" required>
       <input type="email" name="email" placeholder="Email" required>
       <textarea name="message" placeholder="Missatge" required></textarea>
-
       <button type="submit" class="cta">Enviar</button>
     </form>
+
+    <!-- Missatge de resultat -->
+    <div id="form-result" class="form-result"></div>
 
     <div class="info">
       <p>📧 hola@impactstudio360.com</p>
@@ -206,7 +242,34 @@
     </div>
   </footer>
 
-  <!-- Script -->
-  <script src="script.js?v=3"></script>
+  <!-- Scripts -->
+  <script src="script.js?v=5"></script>
+
+  <!-- Web3Forms - resultat d’enviament -->
+  <script>
+    const form = document.getElementById('contact-form');
+    const result = document.getElementById('form-result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      result.textContent = "Enviant missatge...";
+      result.className = "form-result sending show";
+
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData
+      });
+
+      if (response.ok) {
+        result.textContent = "✅ Gràcies! Hem rebut el teu missatge.";
+        result.className = "form-result success show";
+        form.reset();
+      } else {
+        result.textContent = "❌ Hi ha hagut un error. Torna-ho a intentar.";
+        result.className = "form-result error show";
+      }
+    });
+  </script>
 </body>
 </html>
