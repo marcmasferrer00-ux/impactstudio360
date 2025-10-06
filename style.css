@@ -137,6 +137,22 @@ nav a:hover{color:#c32f3c}
   .hero h1 { font-size: 1.9rem; }
   .hero p { font-size: 1rem; }
 }
+/* Ajustos finals hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 /* ===== REVEAL ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
