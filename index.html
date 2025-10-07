@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <!-- =======================
   <!-- ===============================
        IMPACT STUDIO 360 - HEAD OPTIMITZAT
-       ======================= -->
-
        =============================== -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,56 +10,51 @@
 
   <!-- TITLES & SEO -->
   <title>Impact Studio 360 | Estratègia, màrqueting i disseny digital</title>
-  <meta name="description" content="Impact Studio 360 és una agència creativa que impulsa marques amb estratègia digital, màrqueting, disseny i tecnologia. Fem que la teva marca deixi de ser invisible.">
   <meta name="description" content="Transformem la presència digital de la teva marca amb estratègia, disseny i tecnologia. Fem que deixi de ser invisible.">
   <meta name="keywords" content="agència digital, màrqueting, branding, disseny web, impact studio, xarxes socials, estratègia digital, e-commerce, disseny gràfic, audiovisual">
 
   <!-- Open Graph / Social Preview -->
-  <!-- OPEN GRAPH (Facebook / LinkedIn / WhatsApp) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Impact Studio 360">
   <meta property="og:url" content="https://impactstudio360.vercel.app/">
   <meta property="og:title" content="Impact Studio 360 | Estratègia, màrqueting i disseny digital">
   <meta property="og:description" content="Transformem la presència digital de la teva marca amb estratègia, disseny i tecnologia. Fem que deixi de ser invisible.">
-  <meta property="og:image" content="https://impactstudio360.vercel.app/img/preview.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://impactstudio360.vercel.app">
+  <meta property="og:image" content="https://impactstudio360.vercel.app/assets/img/preview.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="Impact Studio 360 — Fem que la teva marca deixi de ser invisible">
 
-  <!-- Twitter Card -->
-  <!-- TWITTER / X -->
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://impactstudio360.vercel.app/">
   <meta name="twitter:title" content="Impact Studio 360 | Estratègia, màrqueting i disseny digital">
-  <meta name="twitter:description" content="Transformem la presència digital de la teva marca amb estratègia, disseny i tecnologia.">
   <meta name="twitter:description" content="Transformem la presència digital de la teva marca amb estratègia, disseny i tecnologia. Fem que deixi de ser invisible.">
-  <meta name="twitter:image" content="https://impactstudio360.vercel.app/img/preview.jpg">
-  <meta name="twitter:image:alt" content="Impact Studio 360 — Fem que la teva marca deixi de ser invisible">
+  <meta name="twitter:image" content="https://impactstudio360.vercel.app/assets/img/preview.jpg">
 
-  <!-- Favicon -->
-  <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
+  <!-- Favicon (usa el logo fins que tinguis un .ico propi) -->
+  <link rel="icon" href="/assets/img/logo.png" type="image/png">
 
-  <!-- Preload recursos clau -->
-  <link rel="preload" href="/img/logo-impactstudio.png" as="image" />
-  <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin />
-
-  <!-- Google Fonts (si cal) -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (necessari per a les icones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
 
   <!-- Estils -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Schema.org SEO (estructura semàntica per Google) -->
+  <!-- Schema.org JSON-LD bàsic (rutes corregides) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Impact Studio 360",
     "url": "https://impactstudio360.vercel.app",
-    "logo": "https://impactstudio360.vercel.app/img/logo-impactstudio.png",
+    "logo": "https://impactstudio360.vercel.app/assets/img/logo.png",
+    "image": "https://impactstudio360.vercel.app/assets/img/preview.jpg",
     "sameAs": [
       "https://www.instagram.com/impactstudio360",
       "https://www.linkedin.com/company/impactstudio360"
@@ -75,17 +67,8 @@
     }
   }
   </script>
-  <!-- FAVICON -->
-  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-
-  <!-- PRELOAD RESSOURCES -->
-  <link rel="preload" href="/img/logo-impactstudio.png" as="image">
-  <link rel="preload" href="/fonts/Poppins-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-  <!-- END HEAD -->
 </head>
 <body>
-
 
   <!-- HEADER -->
   <header>
@@ -108,7 +91,7 @@
     <a href="#contact" class="cta desktop-only">Parlem?</a>
   </header>
 
-  <!-- HERO - Fons vermell complet amb textura grain -->
+  <!-- HERO -->
   <section id="home" class="hero" role="banner">
     <div class="hero-content reveal-seq">
       <img class="hero-logo" src="assets/img/logo.png" alt="Impact Studio 360">
@@ -120,7 +103,7 @@
     <div class="scroll-indicator" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></div>
   </section>
 
-  <!-- STATS - Fons vermell degradat amb grain -->
+  <!-- STATS -->
   <section class="stats stats--red" aria-labelledby="stats-title">
     <h2 id="stats-title" class="reveal">Ser invisible és perdre clients.</h2>
     <p class="reveal">El món és digital. Si no hi ets, perds oportunitats cada dia. Les dades parlen per si soles:</p>
@@ -155,22 +138,23 @@
 
     <div class="grid">
       <div class="card reveal">
-        <i class="fas fa-chess-board icon"></i>
+        <i class="fa-solid fa-chess-board icon"></i>
         <h3>Estratègia</h3>
         <p>Traçem el full de ruta perquè la teva marca creixi amb una direcció clara.</p>
       </div>
       <div class="card reveal">
-        <i class="fas fa-bullhorn icon"></i>
+        <i class="fa-solid fa-bullhorn icon"></i>
         <h3>Màrqueting</h3>
         <p>Connectem la teva marca amb el teu públic a través de campanyes efectives.</p>
       </div>
       <div class="card reveal">
-        <i class="fas fa-code icon"></i>
+        <i class="fa-solid fa-code icon"></i>
         <h3>Desenvolupament</h3>
         <p>Creem webs modernes i e-commerce optimitzats perquè venguis més i millor.</p>
       </div>
       <div class="card reveal">
-        <i class="fas fa-share-alt icon"></i>
+        <!-- 'share-alt' és deprecated a FA6; fem servir share-nodes -->
+        <i class="fa-solid fa-share-nodes icon"></i>
         <h3>Xarxes socials</h3>
         <p>Gestió i creació de contingut que transforma seguidors en clients.</p>
       </div>
@@ -184,27 +168,28 @@
 
     <div class="grid">
       <div class="card reveal">
-        <i class="fas fa-paint-brush icon"></i>
+        <!-- 'paint-brush' → 'paintbrush' a FA6 -->
+        <i class="fa-solid fa-paintbrush icon"></i>
         <h3>Branding & Disseny gràfic</h3>
         <p>Identitats visuals memorables i coherents que transmeten l’essència de la teva marca.</p>
       </div>
       <div class="card reveal">
-        <i class="fas fa-route icon"></i>
+        <i class="fa-solid fa-route icon"></i>
         <h3>Estratègia digital</h3>
         <p>Definim el full de ruta perquè el teu negoci tingui creixement i resultats clars.</p>
       </div>
       <div class="card reveal">
-        <i class="fas fa-hashtag icon"></i>
+        <i class="fa-solid fa-hashtag icon"></i>
         <h3>Gestió de xarxes socials</h3>
         <p>Contingut atractiu i connexió real amb la teva comunitat.</p>
       </div>
       <div class="card reveal">
-        <i class="fas fa-laptop-code icon"></i>
+        <i class="fa-solid fa-laptop-code icon"></i>
         <h3>Web & e-commerce</h3>
         <p>Webs ràpides, modernes i orientades a convertir visites en clients.</p>
       </div>
       <div class="card reveal">
-        <i class="fas fa-video icon"></i>
+        <i class="fa-solid fa-video icon"></i>
         <h3>Producció audiovisual</h3>
         <p>Foto i vídeo professionals per donar força i credibilitat al teu missatge.</p>
       </div>
@@ -257,8 +242,8 @@
       <p>📧 hola@impactstudio360.com</p>
       <p>☎️ +34 600 000 000</p>
       <p>Segueix-nos:
-        <a href="https://instagram.com/impactstudio360" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-        <a href="https://facebook.com/impactstudio360" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/impactstudio360" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://facebook.com/impactstudio360" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i></a>
       </p>
     </div>
   </section>
@@ -269,6 +254,6 @@
   </footer>
 
   <!-- JS -->
- <script src="script.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
