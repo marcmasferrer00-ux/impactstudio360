@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Indica a Google on trobar el sitemap principal
 Sitemap: https://impactstudio360.com/sitemap.xml
+
+# Defineix el domini canònic per evitar contingut duplicat
+Host: https://impactstudio360.com
