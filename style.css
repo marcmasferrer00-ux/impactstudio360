@@ -1,149 +1,217 @@
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Impact Studio 360 | Branding, webs i màrqueting que converteix</title>
-  <meta name="description" content="Agència de branding i màrqueting digital per a pimes. Fem que la teva marca deixi de ser invisible i converteixi visitants en clients." />
-  <link rel="canonical" href="https://impactstudio360.com/" />
+/* =============================================
+   Impact Studio 360 – Estils bàsics
+   Aquesta fulla d’estil proporciona una aparença
+   neta i professional sense dependre de build
+   avançats. Personalitza les variables per
+   ajustar colors i mides.
+   ============================================= */
 
-  <!-- Open Graph / Social Preview -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Impact Studio 360 | Branding, webs i màrqueting que converteix" />
-  <meta property="og:description" content="Transformem la presència digital del teu negoci amb estratègia, disseny i tecnologia." />
-  <meta property="og:url" content="https://impactstudio360.com/" />
-  <meta property="og:image" content="assets/img/preview.jpg" />
+:root {
+  --brand: #7a0f1b;
+  --bg: #ffffff;
+  --bg-alt: #f6f6f6;
+  --text: #111111;
+  --muted: #6b7280;
+  --radius: 10px;
+}
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Impact Studio 360" />
-  <meta name="twitter:description" content="Agència de branding, web i màrqueting digital per a pimes." />
-  <meta name="twitter:image" content="assets/img/preview.jpg" />
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-XI6lBXU2H0U0L5I5r4T/EAy2J5Lw1pKIA7jtQelv8oxR1G3i5s7REY2wA5nHTzG02XrOEpljbNpBrakF6v3xgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-  <!-- Estils -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- CAPÇALERA -->
-  <header class="topbar">
-    <div class="container flex-between">
-      <a href="#" class="logo" aria-label="Impact Studio 360">
-        <img src="assets/img/logo.png" alt="Impact Studio 360" height="40" />
-      </a>
-      <nav class="main-nav">
-        <a href="#serveis">Serveis</a>
-        <a href="#projectes">Projectes</a>
-        <a href="#contacte">Contacte</a>
-        <a href="#contacte" class="btn btn-primary">Reserva una trucada</a>
-      </nav>
-    </div>
-  </header>
+/* Topbar */
+.topbar {
+  background: var(--bg);
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+}
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="container hero-content">
-      <h1>Fem que la teva marca deixi de ser invisible</h1>
-      <p>Branding, webs i contingut que generen contactes qualificats per al teu negoci.</p>
-      <div class="cta-row">
-        <a href="#contacte" class="btn btn-primary">Reserva una trucada</a>
-        <!-- Actualitza amb el teu número de WhatsApp sense espais ni guions -->
-        <a href="https://wa.me/34XXXXXXXXX" class="btn btn-outline" target="_blank" rel="noopener">Parla per WhatsApp</a>
-      </div>
-    </div>
-  </section>
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  <!-- SERVEIS -->
-  <section id="serveis" class="services">
-    <div class="container">
-      <h2>Serveis</h2>
-      <p>Dissenyem solucions digitals adaptades a cada negoci.</p>
-      <div class="grid cards-4">
-        <div class="card">
-          <i class="fa-solid fa-paintbrush icon"></i>
-          <h3>Branding & Disseny</h3>
-          <p>Identitats visuals coherents que transmeten l’essència de la teva marca.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-route icon"></i>
-          <h3>Estratègia digital</h3>
-          <p>Full de ruta clar per fer créixer el teu negoci amb resultats mesurables.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-hashtag icon"></i>
-          <h3>Xarxes socials</h3>
-          <p>Gestió i contingut que transforma seguidors en clients.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-laptop-code icon"></i>
-          <h3>Web & E‑commerce</h3>
-          <p>Webs ràpides, modernes i orientades a convertir visites en clients.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+.main-nav a {
+  margin-left: 16px;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.main-nav a:hover {
+  color: var(--brand);
+}
 
-  <!-- PROJECTES -->
-  <section id="projectes" class="projects">
-    <div class="container">
-      <h2>Projectes</h2>
-      <p>Alguns exemples del que podem fer.</p>
-      <div class="grid">
-        <div class="card project">
-          <!-- Actualitza l’URL de la imatge al teu projecte real -->
-          <img src="assets/img/granja-hero.jpg" alt="La Granja del Montseny" />
-          <h3>La Granja del Montseny</h3>
-          <p>Rebranding, web i xarxes socials per transmetre autenticitat i qualitat.</p>
-          <a href="#contacte" class="btn btn-outline">Vull un projecte així</a>
-        </div>
-      </div>
-    </div>
-  </section>
+/* Botons */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--brand);
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+.btn-primary:hover {
+  background: #630d16;
+}
+.btn-outline {
+  color: var(--brand);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--brand);
+  color: #fff;
+}
 
-  <!-- CONTACTE -->
-  <section id="contacte" class="contact">
-    <div class="container">
-      <h2>Parlem del teu projecte</h2>
-      <p>Deixa’ns les teves dades i et contactarem per una consultoria gratuïta.</p>
-      <div class="grid contact-grid">
-        <form name="contacte" method="POST" data-netlify="true" class="card">
-          <input type="hidden" name="form-name" value="contacte" />
-          <label>Nom i cognoms*</label>
-          <input type="text" name="nom" required />
-          <label>Correu electrònic*</label>
-          <input type="email" name="email" required />
-          <label>Telèfon</label>
-          <input type="text" name="telefon" />
-          <label>Missatge*</label>
-          <textarea name="missatge" required></textarea>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-        <div class="card">
-          <h3>Contacte directe</h3>
-          <!-- Actualitza amb el teu email i telèfon reals -->
-          <p><strong>Email:</strong> <a href="mailto:hola@impactstudio360.com">hola@impactstudio360.com</a></p>
-          <p><strong>Telèfon:</strong> <a href="tel:+34XXXXXXXXX">+34 XXX XXX XXX</a></p>
-          <p><strong>WhatsApp:</strong> <a href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
+/* Hero */
+.hero {
+  padding: 100px 0;
+  background: var(--bg-alt);
+}
+.hero-content {
+  max-width: 700px;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+.cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Impact Studio 360 · Tots els drets reservats</p>
-    </div>
-  </footer>
-</body>
-</html>
+/* Seccions generals */
+section {
+  padding: 60px 0;
+}
+section h2 {
+  margin-bottom: 12px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+section p {
+  margin-bottom: 24px;
+  color: var(--muted);
+  max-width: 700px;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+  gap: 24px;
+}
+.cards-4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.contact-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.card .icon {
+  font-size: 32px;
+  color: var(--brand);
+  margin-bottom: 12px;
+}
+
+/* Projectes */
+.projects .grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.project img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+}
+.project h3 {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+}
+.project p {
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+/* Formulari de contacte */
+.contact-grid form input,
+.contact-grid form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-family: inherit;
+}
+.contact-grid form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Footer */
+.footer {
+  background: var(--bg-alt);
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Responsiu */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0;
+    text-align: center;
+  }
+  .hero-content {
+    margin: 0 auto;
+  }
+  .cta-row {
+    justify-content: center;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
