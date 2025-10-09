@@ -1,149 +1,253 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Impact Studio 360 | Branding, webs i màrqueting que converteix</title>
-  <meta name="description" content="Agència de branding i màrqueting digital per a pimes. Fem que la teva marca deixi de ser invisible i converteixi visitants en clients." />
+  <meta name="description" content="Agència de branding, disseny web i màrqueting digital per a pimes. Fem que la teva marca deixi de ser invisible amb estratègia, disseny i contingut que converteix." />
   <link rel="canonical" href="https://impactstudio360.com/" />
 
-  <!-- Open Graph / Social Preview -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Impact Studio 360 | Branding, webs i màrqueting que converteix" />
-  <meta property="og:description" content="Transformem la presència digital del teu negoci amb estratègia, disseny i tecnologia." />
+  <meta property="og:description" content="Transformem marques invisibles en referents visibles amb estratègia, disseny i contingut." />
   <meta property="og:url" content="https://impactstudio360.com/" />
-  <meta property="og:image" content="assets/img/preview.jpg" />
+  <meta property="og:image" content="assets/img/og-cover.jpg" />
 
-  <!-- Twitter / X -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Impact Studio 360" />
-  <meta name="twitter:description" content="Agència de branding, web i màrqueting digital per a pimes." />
-  <meta name="twitter:image" content="assets/img/preview.jpg" />
+  <meta name="twitter:description" content="Webs clares i orientades a resultats, branding i xarxes." />
+  <meta name="twitter:image" content="assets/img/og-cover.jpg" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-XI6lBXU2H0U0L5I5r4T/EAy2J5Lw1pKIA7jtQelv8oxR1G3i5s7REY2wA5nHTzG02XrOEpljbNpBrakF6v3xgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Estils -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <!-- CAPÇALERA -->
-  <header class="topbar">
+  <!-- HEADER -->
+  <header class="topbar" role="banner">
     <div class="container flex-between">
-      <a href="#" class="logo" aria-label="Impact Studio 360">
-        <img src="assets/img/logo.png" alt="Impact Studio 360" height="40" />
+      <a class="logo" href="#home" aria-label="Inici Impact Studio 360">
+        <!-- Logo editable -->
+        <img src="assets/img/logo.svg" alt="Impact Studio 360" height="40" />
       </a>
-      <nav class="main-nav">
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav" aria-label="Obre el menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="mainnav" class="main-nav" role="navigation" aria-label="Navegació principal">
+        <a href="#home">Inici</a>
+        <a href="#agencia">Agència</a>
         <a href="#serveis">Serveis</a>
+        <a href="#resultats">Resultats</a>
         <a href="#projectes">Projectes</a>
-        <a href="#contacte">Contacte</a>
-        <a href="#contacte" class="btn btn-primary">Reserva una trucada</a>
+        <a href="#contacte" class="btn btn-primary">Parlem?</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="container hero-content">
-      <h1>Fem que la teva marca deixi de ser invisible</h1>
-      <p>Branding, webs i contingut que generen contactes qualificats per al teu negoci.</p>
-      <div class="cta-row">
-        <a href="#contacte" class="btn btn-primary">Reserva una trucada</a>
-        <!-- Actualitza amb el teu número de WhatsApp sense espais ni guions -->
-        <a href="https://wa.me/34XXXXXXXXX" class="btn btn-outline" target="_blank" rel="noopener">Parla per WhatsApp</a>
+  <section id="home" class="hero section">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Si ningú et coneix, ningú et compra.</h1>
+        <p class="lead">Fem que la teva marca deixi de ser invisible amb <strong>estratègia</strong>, <strong>disseny</strong> i <strong>contingut</strong> que converteix.</p>
+        <div class="cta-row">
+          <a href="#contacte" class="btn btn-primary">Vull que em coneguin</a>
+          <!-- Substitueix el número per al teu WhatsApp (sense espais ni guions) -->
+          <a class="btn btn-outline" href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">WhatsApp directe</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <!-- Imatge o textura suau (opcional) -->
+        <img src="assets/img/hero.jpg" alt="" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- AGÈNCIA -->
+  <section id="agencia" class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Som més que una agència</h2>
+        <p>Combinen <strong>estratègia</strong>, <strong>creativitat</strong> i <strong>comunicació</strong> per convertir marques invisibles en referents visibles.</p>
+      </div>
+
+      <div class="grid cards-3">
+        <article class="card">
+          <div class="icon">{/* icon estratègia */}</div>
+          <h3>Estratègia</h3>
+          <p>Diagnòstic, posicionament i proposta de valor per connectar amb el client correcte.</p>
+        </article>
+        <article class="card">
+          <div class="icon">{/* icon disseny */}</div>
+          <h3>Creativitat</h3>
+          <p>Identitat i llenguatge visual coherents perquè la teva marca sigui reconeixible.</p>
+        </article>
+        <article class="card">
+          <div class="icon">{/* icon comunicació */}</div>
+          <h3>Comunicació</h3>
+          <p>Contingut que explica bé què fas, per què i per a qui — sense fum.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- SERVEIS -->
-  <section id="serveis" class="services">
+  <section id="serveis" class="section">
     <div class="container">
-      <h2>Serveis</h2>
-      <p>Dissenyem solucions digitals adaptades a cada negoci.</p>
+      <div class="section-head">
+        <h2>El que fem</h2>
+        <p>Solucions adaptades al teu negoci, orientades a resultats tangibles.</p>
+      </div>
+
       <div class="grid cards-4">
-        <div class="card">
-          <i class="fa-solid fa-paintbrush icon"></i>
-          <h3>Branding & Disseny</h3>
-          <p>Identitats visuals coherents que transmeten l’essència de la teva marca.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-route icon"></i>
-          <h3>Estratègia digital</h3>
-          <p>Full de ruta clar per fer créixer el teu negoci amb resultats mesurables.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-hashtag icon"></i>
+        <article class="card service">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l4 7-4 11-4-11 4-7z"/></svg>
+          <h3>Branding i identitat</h3>
+          <p>Marques coherents, memorables i amb narrativa pròpia.</p>
+        </article>
+        <article class="card service">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v12H3zM8 21h8"/></svg>
+          <h3>Web i e-commerce</h3>
+          <p>Webs ràpides, clares i orientades a conversió.</p>
+        </article>
+        <article class="card service">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM8 8h8v8H8z"/></svg>
           <h3>Xarxes socials</h3>
-          <p>Gestió i contingut que transforma seguidors en clients.</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-laptop-code icon"></i>
-          <h3>Web & E‑commerce</h3>
-          <p>Webs ràpides, modernes i orientades a convertir visites en clients.</p>
-        </div>
+          <p>Estratègia i disseny de contingut per generar relació i interacció.</p>
+        </article>
+        <article class="card service">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+          <h3>Màrqueting digital</h3>
+          <p>Campanyes i posicionament amb mètrica i retorn.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTES -->
-  <section id="projectes" class="projects">
+  <!-- RESULTATS -->
+  <section id="resultats" class="section alt">
     <div class="container">
-      <h2>Projectes</h2>
-      <p>Alguns exemples del que podem fer.</p>
-      <div class="grid">
-        <div class="card project">
-          <!-- Actualitza l’URL de la imatge al teu projecte real -->
-          <img src="assets/img/granja-hero.jpg" alt="La Granja del Montseny" />
-          <h3>La Granja del Montseny</h3>
-          <p>Rebranding, web i xarxes socials per transmetre autenticitat i qualitat.</p>
-          <a href="#contacte" class="btn btn-outline">Vull un projecte així</a>
+      <div class="section-head">
+        <h2>El que fem, funciona</h2>
+        <p>Resultats reals amb marques reals (dades il·lustratives inicials; les podem refinar).</p>
+      </div>
+
+      <div class="grid stats">
+        <div class="stat">
+          <div class="stat-number" data-target="120">0</div>
+          <div class="stat-label">+% visibilitat digital</div>
         </div>
+        <div class="stat">
+          <div class="stat-number" data-target="35">0</div>
+          <div class="stat-label">+% vendes</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" data-target="500">0</div>
+          <div class="stat-label">+% interaccions</div>
+        </div>
+      </div>
+
+      <blockquote class="quote">
+        “Volíem una marca clara i propera. Ara la gent ens reconeix i confia.”
+        <cite>— La Granja del Montseny</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- PROJECTES -->
+  <section id="projectes" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projectes que parlen per si sols</h2>
+        <p>Una mostra del que podem fer. Anirem afegint més casos a mesura que els tinguem.</p>
+      </div>
+
+      <div class="grid projects">
+        <article class="card project">
+          <img src="assets/img/granja-hero.jpg" alt="Projecte La Granja del Montseny" loading="lazy" />
+          <div class="project-body">
+            <h3>La Granja del Montseny</h3>
+            <p>Rebranding, web i xarxes socials per transmetre autenticitat i qualitat artesanal.</p>
+            <a class="btn btn-outline" href="#contacte">Vull un projecte així</a>
+          </div>
+        </article>
+
+        <!-- Placeholder per futurs projectes -->
+        <article class="card project placeholder">
+          <div class="placeholder-box" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3>Projecte en curs</h3>
+            <p>Espai reservat per a un nou cas d’èxit.</p>
+            <a class="btn btn-outline" href="#contacte">Parlem-ne</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- CONTACTE -->
-  <section id="contacte" class="contact">
+  <section id="contacte" class="section alt">
     <div class="container">
-      <h2>Parlem del teu projecte</h2>
-      <p>Deixa’ns les teves dades i et contactarem per una consultoria gratuïta.</p>
+      <div class="section-head">
+        <h2>Parlem del teu projecte</h2>
+        <p>Deixa’ns les teves dades i et respondrem en menys de 24 hores.</p>
+      </div>
+
       <div class="grid contact-grid">
-        <form name="contacte" method="POST" data-netlify="true" class="card">
+        <!-- Netlify Forms -->
+        <form name="contacte" method="POST" data-netlify="true" class="card form">
           <input type="hidden" name="form-name" value="contacte" />
-          <label>Nom i cognoms*</label>
-          <input type="text" name="nom" required />
-          <label>Correu electrònic*</label>
-          <input type="email" name="email" required />
-          <label>Telèfon</label>
-          <input type="text" name="telefon" />
-          <label>Missatge*</label>
-          <textarea name="missatge" required></textarea>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <label for="nom">Nom i cognoms*</label>
+          <input id="nom" name="nom" required />
+          <label for="email">Correu electrònic*</label>
+          <input id="email" name="email" type="email" required />
+          <label for="telefon">Telèfon</label>
+          <input id="telefon" name="telefon" />
+          <label for="missatge">Missatge*</label>
+          <textarea id="missatge" name="missatge" required></textarea>
+          <button class="btn btn-primary" type="submit">Enviar</button>
         </form>
-        <div class="card">
+
+        <div class="card contact-directe">
           <h3>Contacte directe</h3>
-          <!-- Actualitza amb el teu email i telèfon reals -->
+          <!-- Substitueix pels teus dades -->
           <p><strong>Email:</strong> <a href="mailto:hola@impactstudio360.com">hola@impactstudio360.com</a></p>
           <p><strong>Telèfon:</strong> <a href="tel:+34XXXXXXXXX">+34 XXX XXX XXX</a></p>
-          <p><strong>WhatsApp:</strong> <a href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">WhatsApp</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">Escriu-nos</a></p>
+          <p class="muted">Ens agrada parlar amb calma per entendre bé què necessites.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <p>&copy; 2025 Impact Studio 360 · Tots els drets reservats</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo-mark.svg" alt="" height="28" />
+          <p class="muted">© 2025 Impact Studio 360 — Tots els drets reservats.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Enllaços legals i socials">
+          <a href="#" aria-disabled="true">Privacitat</a>
+          <a href="#" aria-disabled="true">Cookies</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+      </div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
