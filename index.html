@@ -35,7 +35,6 @@
   <header class="topbar" role="banner">
     <div class="container flex-between">
       <a class="logo" href="#home" aria-label="Inici Impact Studio 360">
-        <!-- Logo editable -->
         <img src="assets/img/logo.svg" alt="Impact Studio 360" height="40" />
       </a>
 
@@ -62,12 +61,10 @@
         <p class="lead">Fem que la teva marca deixi de ser invisible amb <strong>estratègia</strong>, <strong>disseny</strong> i <strong>contingut</strong> que converteix.</p>
         <div class="cta-row">
           <a href="#contacte" class="btn btn-primary">Vull que em coneguin</a>
-          <!-- Substitueix el número per al teu WhatsApp (sense espais ni guions) -->
           <a class="btn btn-outline" href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">WhatsApp directe</a>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <!-- Imatge o textura suau (opcional) -->
         <img src="assets/img/hero.jpg" alt="" loading="lazy" />
       </div>
     </div>
@@ -83,17 +80,34 @@
 
       <div class="grid cards-3">
         <article class="card">
-          <div class="icon">{/* icon estratègia */}</div>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#8C1E2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M22 2l-10 12"></path>
+              <path d="M14 2L2 12"></path>
+            </svg>
+          </div>
           <h3>Estratègia</h3>
           <p>Diagnòstic, posicionament i proposta de valor per connectar amb el client correcte.</p>
         </article>
+
         <article class="card">
-          <div class="icon">{/* icon disseny */}</div>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#8C1E2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 8v8M8 12h8"></path>
+            </svg>
+          </div>
           <h3>Creativitat</h3>
           <p>Identitat i llenguatge visual coherents perquè la teva marca sigui reconeixible.</p>
         </article>
+
         <article class="card">
-          <div class="icon">{/* icon comunicació */}</div>
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#8C1E2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
           <h3>Comunicació</h3>
           <p>Contingut que explica bé què fas, per què i per a qui — sense fum.</p>
         </article>
@@ -139,7 +153,7 @@
     <div class="container">
       <div class="section-head">
         <h2>El que fem, funciona</h2>
-        <p>Resultats reals amb marques reals (dades il·lustratives inicials; les podem refinar).</p>
+        <p>Resultats reals amb marques reals.</p>
       </div>
 
       <div class="grid stats">
@@ -182,7 +196,6 @@
           </div>
         </article>
 
-        <!-- Placeholder per futurs projectes -->
         <article class="card project placeholder">
           <div class="placeholder-box" aria-hidden="true"></div>
           <div class="project-body">
@@ -204,7 +217,6 @@
       </div>
 
       <div class="grid contact-grid">
-        <!-- Netlify Forms -->
         <form name="contacte" method="POST" data-netlify="true" class="card form">
           <input type="hidden" name="form-name" value="contacte" />
           <label for="nom">Nom i cognoms*</label>
@@ -220,7 +232,6 @@
 
         <div class="card contact-directe">
           <h3>Contacte directe</h3>
-          <!-- Substitueix pels teus dades -->
           <p><strong>Email:</strong> <a href="mailto:hola@impactstudio360.com">hola@impactstudio360.com</a></p>
           <p><strong>Telèfon:</strong> <a href="tel:+34XXXXXXXXX">+34 XXX XXX XXX</a></p>
           <p><strong>WhatsApp:</strong> <a href="https://wa.me/34XXXXXXXXX" target="_blank" rel="noopener">Escriu-nos</a></p>
