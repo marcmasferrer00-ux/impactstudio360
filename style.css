@@ -267,3 +267,45 @@ a{text-decoration:none;color:inherit}
 .hero {
   background: linear-gradient(135deg, #ffffff 60%, #f9f4f4);
 }
+
+/* LOGO HEADER */
+.logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* HERO */
+.hero-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-heading h1 {
+  flex: 1;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hero-logo-side {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-logo-side {
+    height: 60px;
+    margin-top: 0.5rem;
+  }
+}
