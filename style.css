@@ -137,55 +137,6 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.2;
   margin: 0;
 }
-/* --- Ajust de mida i proporció del logo al HERO --- */
-.hero-logo-right {
-  height: 400px;              /* mida més gran */
-  width: auto;
-  object-fit: contain;
-  background: transparent;
-  margin-left: 1.5rem;        /* separació lateral */
-  transform: translateY(-6px); /* alineació vertical */
-  animation: fadeIn 1s ease;
-}
-
-@media (max-width: 768px) {
-  .hero-logo-right {
-    height: 100px;             /* mida reduïda en mòbil */
-    margin-top: 0.5rem;
-    margin-left: 0;
-  }
-}
-
-/* Animació del logo */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.hero .lead {
-  color: var(--muted);
-  font-size: 1.125rem;
-  margin: 12px 0 16px;
-}
-.cta-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-  .hero-heading {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .hero-logo-right {
-    height: 80px;
-    margin-top: 0.5rem;
-  }
-  .hero h1 {
-    font-size: 2rem;
-  }
-}
 
 /* =============== Cards & grids =============== */
 .grid { display: grid; gap: 22px; }
