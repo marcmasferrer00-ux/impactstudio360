@@ -139,7 +139,7 @@ a { text-decoration: none; color: inherit; }
 }
 /* --- Ajust de mida i proporció del logo al HERO --- */
 .hero-logo-right {
-  height: 180px;              /* mida més gran */
+  height: 300px;              /* mida més gran */
   width: auto;
   object-fit: contain;
   background: transparent;
