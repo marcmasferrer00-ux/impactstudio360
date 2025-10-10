@@ -295,3 +295,79 @@ a { text-decoration: none; color: inherit; }
 .service .icon { transition: all 0.25s ease; }
 .service:hover .icon { transform: scale(1.2); color: var(--brand); }
 .service:hover h3 { color: var(--brand); }
+
+/* --- HERO layout i proporcions --- */
+.hero {
+  background: linear-gradient(135deg, #ffffff 60%, #f9f4f4);
+  border: none !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Esquerra text, dreta logo */
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero .lead {
+  color: var(--muted);
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* --- LOGO DRETA --- */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo-right {
+  width: 100%;
+  max-width: 400px; /* pots pujar-ho fins a 500px si vols més gran */
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 920px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-visual {
+    margin-top: 2rem;
+  }
+
+  .hero-logo-right {
+    max-width: 300px;
+  }
+}
