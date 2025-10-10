@@ -137,12 +137,23 @@ a { text-decoration: none; color: inherit; }
   line-height: 1.2;
   margin: 0;
 }
+/* --- Ajust de mida i proporció del logo al HERO --- */
 .hero-logo-right {
-  height: 110px;
+  height: 180px;              /* mida més gran */
   width: auto;
   object-fit: contain;
   background: transparent;
+  margin-left: 1.5rem;        /* separació lateral */
+  transform: translateY(-6px); /* alineació vertical */
   animation: fadeIn 1s ease;
+}
+
+@media (max-width: 768px) {
+  .hero-logo-right {
+    height: 100px;             /* mida reduïda en mòbil */
+    margin-top: 0.5rem;
+    margin-left: 0;
+  }
 }
 
 /* Animació del logo */
