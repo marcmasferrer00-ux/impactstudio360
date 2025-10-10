@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://impactstudio360.com/sitemap.xml
-Host: https://impactstudio360.com
+Sitemap: https://impactstudio360.github.io/impactstudio360-3r1s/sitemap.xml
+Host: https://impactstudio360.github.io/impactstudio360-3r1s/
