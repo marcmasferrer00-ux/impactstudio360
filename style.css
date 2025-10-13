@@ -341,34 +341,24 @@ a { text-decoration: none; color: inherit; }
   background: var(--ink);
 }
 
-/* Disposición del hero en móviles */
 @media (max-width: 920px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .hero-visual {
-    order: -1;                 /* coloca el logo encima del texto */
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: center;
-  }
-  .hero-logo-right {
-    max-width: 260px;          /* tamaño reducido para móviles */
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 920px) {
-  /* Ajustar padding del hero */
   .hero {
     padding-top: 40px;
     padding-bottom: 60px;
   }
-
-  /* Reducir espacio debajo del logo */
   .hero-visual {
+    order: -1;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-logo-right {
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
