@@ -179,9 +179,45 @@ a { text-decoration: none; color: inherit; }
 .stat-label { color: var(--muted); }
 
 /* =============== Projects =============== */
-.projects { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-.project img { border-radius: 12px; border: 0; box-shadow: none; }
-.project-body { padding-top: 10px; }
+/* Contenedor de los proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+/* Tarjetas de proyecto */
+.project-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Imagen del proyecto realizado */
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilo específico para proyecto en curso (sin imagen) */
+.project-card.project-future {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsive: una sola columna en móviles */
+@media (max-width: 920px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* =============== Contacte =============== */
 .contact-grid { grid-template-columns: 1fr 1fr; }
