@@ -323,20 +323,21 @@ a { text-decoration: none; color: inherit; }
   
 }
 
-/* Navegación móvil: botón hamburguesa vertical */
+/* Navegación móvil: botón hamburguesa horizontal */
 .nav-toggle {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 6px;
   display: flex;
-  flex-direction: row;     /* distribuir las barras en fila */
+  flex-direction: column;    /* barras apiladas verticalmente */
+  justify-content: center;
+  align-items: center;
   gap: 4px;
 }
 
-/* Barras verticales */
 .nav-toggle span {
-  width: 2px;
-  height: 18px;
+  width: 22px;              /* barra horizontal */
+  height: 2px;
   background: var(--ink);
 }
 
@@ -356,5 +357,18 @@ a { text-decoration: none; color: inherit; }
     max-width: 260px;          /* tamaño reducido para móviles */
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (max-width: 920px) {
+  /* Ajustar padding del hero */
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  /* Reducir espacio debajo del logo */
+  .hero-visual {
+    margin-bottom: 1rem;
   }
 }
