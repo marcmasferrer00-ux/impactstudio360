@@ -179,52 +179,70 @@ a { text-decoration: none; color: inherit; }
 .stat-label { color: var(--muted); }
 
 /* =============== Projects =============== */
-/* Contenedor de proyectos */
-.projects-grid {
+/* Contenedor de tarjetas: dos columnas en desktop, una en móvil */
+.projects-section {
   display: flex;
-  gap: 2rem;          /* separación entre tarjetas */
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .project-card {
-  flex: 1;            /* ambas tarjetas ocupan el mismo ancho */
-  padding: 2rem;
+  flex: 1;
+  min-width: 45%;             /* ambas tarjetas tendrán aproximadamente la mitad del ancho */
+  background-color: #fff;
   border-radius: 1rem;
-  background: #fff;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* Imagen del proyecto */
+/* Imagen del proyecto: ocupa el ancho de la tarjeta, altura fija */
 .project-card img {
-  width: 100%;           /* ocupa todo el ancho disponible */
-  max-height: 200px;     /* limita la altura (ajusta a tu gusto) */
-  object-fit: cover;     /* recorta y centra la imagen */
-  border-radius: 0.75rem;
+  width: 100%;
+  height: 200px;               /* ajusta este valor a tu gusto (180–220 px) */
+  object-fit: cover;           /* recorta la imagen para que se adapte */
+  display: block;
+}
+
+/* Contenido textual y botón */
+.project-card .content {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  flex-grow: 1;
   margin-bottom: 1rem;
 }
 
-
-/* Versión móvil: tarjetas apiladas */
-@media (max-width: 920px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .project-card {
-    padding: 2rem;
-  }
+.project-card .btn {
+  align-self: flex-start;
 }
 
-
-/* Responsive: una sola columna en móviles */
-@media (max-width: 920px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .project-card {
-    padding: 2rem;
-  }
+/* Tarjeta del proyecto en curso sin imagen */
+.project-card.project-future {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/* Responsive: una columna en pantallas pequeñas */
+@media (max-width: 920px) {
+  .projects-section {
+    flex-direction: column;
+  }
+  .project-card {
+    min-width: 100%;
+  }
+}
 
 /* =============== Contacte =============== */
 .contact-grid { grid-template-columns: 1fr 1fr; }
