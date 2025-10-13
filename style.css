@@ -190,13 +190,12 @@ a { text-decoration: none; color: inherit; }
 .project-card {
   background-color: #fff;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1.5rem 2rem; /* menos espacio arriba y abajo */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-/* Imagen del proyecto realizado */
+/* Imagen: ocupar todo el ancho disponible y ajustar altura */
 .project-card img {
   width: 100%;
   height: auto;
@@ -204,12 +203,25 @@ a { text-decoration: none; color: inherit; }
   margin-bottom: 1rem;
 }
 
+/* Ocupa el espacio restante para que el botón quede abajo */
+.project-card p {
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+/* Asegurar que el botón no estira la tarjeta */
+.project-card .btn-primary,
+.project-card .btn-secondary {
+  align-self: flex-start;
+}
+
 /* Estilo específico para proyecto en curso (sin imagen) */
 .project-card.project-future {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  min-height: 250px; /* altura mínima razonable */
 }
 
 /* Responsive: una sola columna en móviles */
@@ -217,7 +229,11 @@ a { text-decoration: none; color: inherit; }
   .projects-grid {
     grid-template-columns: 1fr;
   }
+  .project-card {
+    padding: 2rem;
+  }
 }
+
 
 /* =============== Contacte =============== */
 .contact-grid { grid-template-columns: 1fr 1fr; }
