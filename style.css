@@ -527,3 +527,150 @@ form input[type="submit"]:active {
     grid-column: span 1;
   }
 }
+
+/* =============== Contact Section =============== */
+.contact-section {
+  padding: 4rem 0;
+  background-color: #f8f8f8;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Bloque formulario */
+.contact-form {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h2 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-form p {
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+
+form label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+form input,
+form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #7b0d1e;
+  box-shadow: 0 0 0 3px rgba(123, 13, 30, 0.15);
+}
+
+form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Botón */
+form .btn {
+  grid-column: span 2;
+  justify-self: center;
+  background-color: #7b0d1e;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+form .btn:hover {
+  background-color: #a51228;
+  transform: translateY(-2px);
+}
+
+/* Bloque de información */
+.contact-info {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.contact-info li {
+  margin-bottom: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+.contact-info strong {
+  color: #7b0d1e;
+}
+
+.contact-info .note {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 920px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form .btn {
+    grid-column: 1;
+  }
+}
+   
