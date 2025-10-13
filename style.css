@@ -181,49 +181,28 @@ a { text-decoration: none; color: inherit; }
 /* =============== Projects =============== */
 /* Contenedor de proyectos */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* dos columnas iguales */
-  gap: 2rem;                             /* espacio entre tarjetas */
-  align-items: flex-start;               /* alinear la parte superior */
+  display: flex;
+  gap: 2rem;          /* separación entre tarjetas */
 }
 
-/* Tarjeta base */
 .project-card {
-  background-color: #fff;
+  flex: 1;            /* ambas tarjetas ocupan el mismo ancho */
+  padding: 2rem;
   border-radius: 1rem;
-  padding: 1.5rem 2rem;                  /* menos espacio vertical */
+  background: #fff;
   display: flex;
-  flex-direction: column;                /* apilar contenido verticalmente */
+  flex-direction: column;
 }
 
 /* Imagen del proyecto */
 .project-card img {
-  width: 100%;
-  height: auto;
+  width: 100%;           /* ocupa todo el ancho disponible */
+  max-height: 200px;     /* limita la altura (ajusta a tu gusto) */
+  object-fit: cover;     /* recorta y centra la imagen */
   border-radius: 0.75rem;
   margin-bottom: 1rem;
 }
 
-/* Descripción: ocupa el espacio disponible */
-.project-card p {
-  flex-grow: 1;
-  margin-bottom: 1.5rem;
-}
-
-/* Botones al fondo de la tarjeta */
-.project-card .btn-primary,
-.project-card .btn-secondary {
-  align-self: flex-start;
-}
-
-/* Tarjeta “Projecte en curs” sin imagen */
-.project-card.project-future {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 250px; /* altura mínima razonable */
-}
 
 /* Versión móvil: tarjetas apiladas */
 @media (max-width: 920px) {
