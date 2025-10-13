@@ -47,4 +47,10 @@ navLinks.forEach(link => {
     toggle.setAttribute('aria-expanded', 'false');
   });
 });
-
+// Close mobile nav when scrolling
+window.addEventListener('scroll', () => {
+  if (nav.classList.contains('open')) {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+});
