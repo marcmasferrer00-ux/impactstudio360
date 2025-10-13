@@ -118,7 +118,7 @@ a { text-decoration: none; color: inherit; }
 }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 24px;
 }
@@ -257,7 +257,7 @@ a { text-decoration: none; color: inherit; }
 
 .hero-grid {
   display: grid;
-  grid-template-colu 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 2rem;
 }
@@ -318,7 +318,7 @@ a { text-decoration: none; color: inherit; }
     margin-top: 2rem;
   }
 
-  .herologo-right {
-   4max-width: 400px;
-  }
+  .hero-logo-right {
+   max-width: 400px;
+  
 }
