@@ -1,4 +1,4 @@
-// Mobile nav toggle
+// //Mobile nav toggle
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.main-nav');
 if (toggle) {
@@ -38,3 +38,13 @@ if (counters.length) {
 
   counters.forEach((c) => io.observe(c));
 }
+
+// Close mobile nav when a link is clicked
+const navLinks = document.querySelectorAll('.main-nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
